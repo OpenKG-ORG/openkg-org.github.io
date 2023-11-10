@@ -1,278 +1,339 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<link rel="apple-touch-icon" sizes="76x76" href="./assets/img/favicon.ico">
-<link rel="icon" type="image/png" href="./assets/img/favicon.ico">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-<title>Mundana Template by WowThemesNet</title>
-<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport'/>
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Source+Sans+Pro:400,600,700" rel="stylesheet">
-<!-- Font Awesome Icons -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-<!-- Main CSS -->
-<link href="./assets/css/main.css" rel="stylesheet"/>
-</head>
-<body>
-<!--------------------------------------
-NAVBAR
---------------------------------------->
-<nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top">
-<div class="container">
-	<a class="navbar-brand" href="./index.html"><strong>Mundana</strong></a>
-	<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-	<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="navbar-collapse collapse" id="navbarColor02" style="">
-		<ul class="navbar-nav mr-auto d-flex align-items-center">
-			<li class="nav-item">
-			<a class="nav-link" href="./index.html">Intro <span class="sr-only">(current)</span></a>
-			</li>
-			<li class="nav-item">
-			<a class="nav-link" href="./article.html">Culture</a>
-			</li>
-			<li class="nav-item">
-			<a class="nav-link" href="./article.html">Tech</a>
-			</li>
-			<li class="nav-item">
-			<a class="nav-link" href="./article.html">Politics</a>
-			</li>
-			<li class="nav-item">
-			<a class="nav-link" href="./article.html">Health</a>
-			</li>
-			<li class="nav-item">
-			<a class="nav-link" href="./article.html">Collections</a>
-			</li>            
-			<li class="nav-item">
-			<a class="nav-link" href="./about.html">About</a>
-			</li>
-			<li class="nav-item">
-			<a class="nav-link" href="./docs.html">Template <span class="badge badge-secondary">docs</span></a>
-			</li>
-		</ul>
-		<ul class="navbar-nav ml-auto d-flex align-items-center">
-			<li class="nav-item highlight">
-			<a class="nav-link" href="https://www.wowthemes.net/mundana-free-html-bootstrap-template/">Get this Theme</a>
-			</li>
-		</ul>
-	</div>
-</div>
-</nav>
-<!-- End Navbar -->
+<html><script id="allow-copy_script">(function agent() {
+    let unlock = false
+    document.addEventListener('allow_copy', (event) => {
+      unlock = event.detail.unlock
+    })
+
+    const copyEvents = [
+      'copy',
+      'cut',
+      'contextmenu',
+      'selectstart',
+      'mousedown',
+      'mouseup',
+      'mousemove',
+      'keydown',
+      'keypress',
+      'keyup',
+    ]
+    const rejectOtherHandlers = (e) => {
+      if (unlock) {
+        e.stopPropagation()
+        if (e.stopImmediatePropagation) e.stopImmediatePropagation()
+      }
+    }
+    copyEvents.forEach((evt) => {
+      document.documentElement.addEventListener(evt, rejectOtherHandlers, {
+        capture: true,
+      })
+    })
+  })()</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
-    
-<!--------------------------------------
-HEADER
---------------------------------------->
-<div class="container">
-	<div class="jumbotron jumbotron-fluid mb-3 pt-0 pb-0 bg-lightblue position-relative">
-		<div class="pl-4 pr-0 h-100 tofront">
-			<div class="row justify-content-between">
-				<div class="col-md-6 pt-6 pb-6 align-self-center">
-					<h1 class="secondfont mb-3 font-weight-bold">Mundana is an HTML Bootstrap Template for Professional Blogging</h1>
-					<p class="mb-3">
-						Beautifully crafted with the latest technologies, SASS & Bootstrap 4.1.3, Mundana is the perfect design for your professional blog. Homepage, post article and category layouts available.
-					</p>
-					<a href="./article.html" class="btn btn-dark">Read More</a>
-				</div>
-				<div class="col-md-6 d-none d-md-block pr-0" style="background-size:cover;background-image:url(./assets/img/demo/home.jpg);">	</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- End Header -->
-    
-    
-<!--------------------------------------
-MAIN
---------------------------------------->
-    
-<div class="container pt-4 pb-4">
-	<div class="row">
-		<div class="col-lg-6">
-			<div class="card border-0 mb-4 box-shadow h-xl-300">              
-                <div style="background-image: url(./assets/img/demo/1.jpg); height: 150px;    background-size: cover;    background-repeat: no-repeat;"></div>               
-				<div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
-					<h2 class="h4 font-weight-bold">
-					<a class="text-dark" href="./article.html">Brain Stimulation Relieves Depression Symptoms</a>
-					</h2>
-					<p class="card-text">
-						 Researchers have found an effective target in the brain for electrical stimulation to improve mood in people suffering from depression.
-					</p>
-					<div>
-						<small class="d-block"><a class="text-muted" href="./author.html">Favid Rick</a></small>
-						<small class="text-muted">Dec 12 &middot; 5 min read</small>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-lg-6">
-			<div class="flex-md-row mb-4 box-shadow h-xl-300">
-				<div class="mb-3 d-flex align-items-center">
-					<img height="80" src="./assets/img/demo/blog4.jpg">
-					<div class="pl-3">
-						<h2 class="mb-2 h6 font-weight-bold">
-						<a class="text-dark" href="./article.html">Nasa's IceSat space laser makes height maps of Earth</a>
-						</h2>
-						<div class="card-text text-muted small">
-							 Jake Bittle in LOVE/HATE
-						</div>
-						<small class="text-muted">Dec 12 &middot; 5 min read</small>
-					</div>
-				</div>
-				<div class="mb-3 d-flex align-items-center">
-					<img height="80" src="./assets/img/demo/blog5.jpg">
-					<div class="pl-3">
-						<h2 class="mb-2 h6 font-weight-bold">
-						<a class="text-dark" href="./article.html">Underwater museum brings hope to Lake Titicaca</a>
-						</h2>
-						<div class="card-text text-muted small">
-							 Jake Bittle in LOVE/HATE
-						</div>
-						<small class="text-muted">Dec 12 &middot; 5 min read</small>
-					</div>
-				</div>
-				<div class="mb-3 d-flex align-items-center">
-					<img height="80" src="./assets/img/demo/blog6.jpg">
-					<div class="pl-3">
-						<h2 class="mb-2 h6 font-weight-bold">
-						<a class="text-dark" href="./article.html">Sun-skimming probe starts calling home</a>
-						</h2>
-						<div class="card-text text-muted small">
-							 Jake Bittle in LOVE/HATE
-						</div>
-						<small class="text-muted">Dec 12 &middot; 5 min read</small>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-    
-<div class="container">
-	<div class="row justify-content-between">
-		<div class="col-md-8">
-			<h5 class="font-weight-bold spanborder"><span>All Stories</span></h5>
-			<div class="mb-3 d-flex justify-content-between">
-				<div class="pr-3">
-					<h2 class="mb-1 h4 font-weight-bold">
-					<a class="text-dark" href="./article.html">Nearly 200 Great Barrier Reef coral species also live in the deep sea</a>
-					</h2>
-					<p>
-						There are more coral species lurking in the deep ocean that previously thought.
-					</p>
-					<div class="card-text text-muted small">
-						 Jake Bittle in SCIENCE
-					</div>
-					<small class="text-muted">Dec 12 &middot; 5 min read</small>
-				</div>
-				<img height="120" src="./assets/img/demo/blog8.jpg">
-			</div>
-			<div class="mb-3 d-flex justify-content-between">
-				<div class="pr-3">
-					<h2 class="mb-1 h4 font-weight-bold">
-					<a class="text-dark" href="./article.html">East Antarctica's glaciers are stirring</a>
-					</h2>
-					<p>
-						Nasa says it has detected the first signs of significant melting in a swathe of glaciers in East Antarctica.
-					</p>
-					<div class="card-text text-muted small">
-						 Jake Bittle in SCIENCE
-					</div>
-					<small class="text-muted">Dec 12 &middot; 5 min read</small>
-				</div>
-				<img height="120" src="./assets/img/demo/1.jpg">
-			</div>
-			<div class="mb-3 d-flex justify-content-between">
-				<div class="pr-3">
-					<h2 class="mb-1 h4 font-weight-bold">
-					<a class="text-dark" href="./article.html">50 years ago, armadillos hinted that DNA wasn’t destiny</a>
-					</h2>
-					<p>
-						Nasa says it has detected the first signs of significant melting in a swathe of glaciers in East Antarctica.
-					</p>
-					<div class="card-text text-muted small">
-						 Jake Bittle in SCIENCE
-					</div>
-					<small class="text-muted">Dec 12 &middot; 5 min read</small>
-				</div>
-				<img height="120" src="./assets/img/demo/5.jpg">
-			</div>
-		</div>
-		<div class="col-md-4 pl-4">
-            <h5 class="font-weight-bold spanborder"><span>Popular</span></h5>
-			<ol class="list-featured">
-				<li>
-				<span>
-				<h6 class="font-weight-bold">
-				<a href="./article.html" class="text-dark">Did Supernovae Kill Off Large Ocean Animals?</a>
-				</h6>
-				<p class="text-muted">
-					Jake Bittle in SCIENCE
-				</p>
-				</span>
-				</li>
-				<li>
-				<span>
-				<h6 class="font-weight-bold">
-				<a href="./article.html" class="text-dark">Humans Reversing Climate Clock: 50 Million Years</a>
-				</h6>
-				<p class="text-muted">
-					Jake Bittle in SCIENCE
-				</p>
-				</span>
-				</li>
-				<li>
-				<span>
-				<h6 class="font-weight-bold">
-				<a href="./article.html" class="text-dark">Unprecedented Views of the Birth of Planets</a>
-				</h6>
-				<p class="text-muted">
-					Jake Bittle in SCIENCE
-				</p>
-				</span>
-				</li>
-				<li>
-				<span>
-				<h6 class="font-weight-bold">
-				<a href="./article.html" class="text-dark">Effective New Target for Mood-Boosting Brain Stimulation Found</a>
-				</h6>
-				<p class="text-muted">
-					Jake Bittle in SCIENCE
-				</p>
-				</span>
-				</li>
-			</ol>
-		</div>
-	</div>
-</div>
-    
-<!--------------------------------------
-FOOTER
---------------------------------------->
-<div class="container mt-5">
-	<footer class="bg-white border-top p-3 text-muted small">
-	<div class="row align-items-center justify-content-between">
-		<div>
-            <span class="navbar-brand mr-2"><strong>Mundana</strong></span> Copyright &copy;
-			<script>document.write(new Date().getFullYear())</script>
-			 . All rights reserved.
-		</div>
-		<div>
-			Made with <a target="_blank" class="text-secondary font-weight-bold" href="https://www.wowthemes.net/mundana-free-html-bootstrap-template/">Mundana Theme</a> by WowThemes.net.
-		</div>
-	</div>
-	</footer>
-</div>
-<!-- End Footer -->
-    
-<!--------------------------------------
-JAVASCRIPTS
---------------------------------------->
-<script src="./assets/js/vendor/jquery.min.js" type="text/javascript"></script>
-<script src="./assets/js/vendor/popper.min.js" type="text/javascript"></script>
-<script src="./assets/js/vendor/bootstrap.min.js" type="text/javascript"></script>
-<script src="./assets/js/functions.js" type="text/javascript"></script>
-</body>
-</html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ICML 2022 Workshop on Knowledge Retrieval and Language Models</title>
+    <link rel="stylesheet" href="./assets/bulma-0.9.3.min.css">
+    <link rel="stylesheet" href="./assets/all.css">
+  </head>
+  <body class="is-size-5" _c_t_j1="1">
+  <section class="hero is-medium is-light">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="subtitle is-size-2">The First International OpenKG Workshop:</h2>
+        <h1 class="title is-size-1">Knowledge Graph and Large Language Models on the Web Conference 2024</h1>
+        <p class="is-size-4">Friday, July 22, 2022<br>
+          Baltimore, Maryland USA (Hybrid)</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="content">
+        <h2>Overview</h2>
+        <p>
+          In just the past couple of years, we have seen significant advances in the capabilities of (Large) Language Models. One of the most striking capabilities of these systems is knowledge retrieval — Language Models can answer a diverse set of questions, which differ substantially in the domain knowledge needed for their responses, and their input structure. The precise methods for knowledge retrieval vary from the language model directly generating a response (parametric approaches) to a combination of generation and referencing an external knowledge corpus, e.g. retrieval augmented generation, to primarily using an external knowledge corpus with language model embeddings (semi-parametric approaches.)
+        </p>
+        <p>
+          Despite the rapid advances, there remain many pressing open questions on the limits of knowledge retrieval with language models, and connections between these different approaches. How factual are generated responses, and how does this vary with question complexity, model scale, and importantly, different methods of knowledge retrieval? How important is the role of (self-supervised/supervised) pretraining?  What are the tradeoffs between few-shot (prompt based) approaches and finetuning when adapting to novel domains? And relatedly, to what extent do different knowledge retrieval approaches generalize to unseen settings?
+        </p>
+        <p>
+          This workshop seeks to bring together a diverse set of researchers across NLP, Machine Learning and Theory to discuss these questions. We hope to share current findings and challenges, identify promising directions for future study, and most importantly, build a community around this topic at this pivotal time.
+        </p>
+
+        <h2>Call for Papers</h2>
+        <p>
+         We welcome all submissions related to knowledge retrieval and language models, including:
+        </p>
+        <ul>
+          <li>Methods for grounding language model responses.</li>
+          <li>Open-domain retrieval and question answering.</li>
+          <li>Improving and evaluating factuality.</li>
+          <li>Bias and fairness in knowledge retrieval.</li>
+          <li>Empirical studies of scale, transfer and generalization.</li>
+          <li>Analysis of knowledge retrieval and language model phenomena.</li>
+        </ul>
+        <p><b>Submission URL</b>: <a href="https://openreview.net/group?id=ICML.cc/2022/Workshop/KRLM">openreview.net/group?id=ICML.cc/2022/Workshop/KRLM</a></p>
+        <p><b>Format</b>: All submissions must be in PDF format. Submissions are limited to <b>four</b> content pages, including all figures and tables; unlimited additional pages containing references and supplementary materials are allowed. Reviewers may choose to read the supplementary materials but will not be required to. Camera-ready versions may go up to <b>five</b> content pages.</p>
+        <p><b>Style file</b>: You must format your submission using the provided <a href="https://knowledge-retrieval-workshop.github.io/files/latex-template.zip">LaTeX style file</a>, which is adapted from the official ICML 2022 LaTeX style file. Please include the references and supplementary materials in the same PDF as the main paper. The maximum file size for submissions is 50MB. Submissions that violate the style (e.g., by decreasing margins or font sizes) or page limits may be rejected without further review.</p>
+        <p><b>Dual-submission policy</b>: We welcome ongoing and unpublished work. We also welcome papers that are under review at the time of submission, or that have been recently accepted.</p>
+        <p><b>Submissions and accepted papers</b>: Workshop submissions and reviews will be private. The camera-ready version of accepted papers will be shared on the workshop webpage. However, the hosting is not an official proceeding, so the papers can be subsequently / concurrently submitted to other venues.</p>
+        <p><b>In person presentation</b>: Accepted papers are expected to be presented in person.</p>
+
+        <h2>Important Dates</h2>
+        <p>
+          </p><ul>
+            <li><b>Submission deadline</b>: May 27, 2022 AOE</li>
+            <li><b>Notification to authors</b>: June 13, 2022</li>
+            <li><b>Camera-ready deadline</b>: July 8th, 2022 AOE</li>
+          </ul>
+        <p></p>
+
+        <h2>Schedule</h2>
+        <!-- <table class="table is-striped">
+          <thead>
+            <tr> <th>Time</th> <th>Event</th> <th>Speaker</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>8:45 am - 9:00 am</td><td>Opening Remarks</td><td>Workshop Organizers</td><td></td></tr>
+            <tr>
+              <td>9:00 am - 9:30 am</td>
+              <td>Invited Talk 1</td>
+              <td>Nils Reimers</td>
+            </tr>
+            <tr>
+              <td>9:30 am - 10:00 am</td>
+              <td>Invited Talk 2</td>
+              <td>Sebastian Riedel</td>
+            </tr>
+            <tr>
+              <td>10:00 am - 10:30 am</td>
+              <td>Break</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>10:30 am - 11:00 am</td>
+              <td>Invited Talk 3</td>
+              <td>John Schulman</td>
+            </tr>
+            <tr>
+              <td>11:00 am - 12:00 pm</td>
+              <td>Poster Session</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>12:00 pm - 1:30 pm</td>
+              <td>Lunch Break</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1:30 pm - 2:00 pm</td>
+              <td>Invited Talk 4</td>
+              <td>Jimmy Lin</td>
+            </tr>
+            <tr>
+              <td>2:00 pm - 2:30 pm</td>
+              <td>Invited Talk 5</td>
+              <td>Ellie Pavlick</td>
+            </tr>
+            <tr>
+              <td>2:30 pm - 3:00 pm</td>
+              <td>Contributed Talks</td>
+              <td>
+                1. Dialog Inpainting: Turning Documents into Dialogs<br>
+                2. Huge Frozen Language Models as Readers for Open-Domain Question Answering<br>
+                3. LinkBERT: Pretraining Language Models with Document Links
+              </td>
+            </tr>
+            <tr>
+              <td>3:00 pm - 3:30 pm</td>
+              <td>Break</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>3:30 pm - 4:00 pm</td>
+              <td>Invited Talk 6</td>
+              <td>Danqi Chen</td>
+            </tr>
+            <tr>
+              <td>4:00 pm - 4:30 pm</td>
+              <td>Invited Talk 7</td>
+              <td>Quoc Le</td>
+            </tr>
+            <tr>
+              <td>4:30 pm - 5:30 pm</td>
+              <td>Panel Discussion</td>
+              <td>Panelists: Kenton Lee, Danqi Chen, Fernando Diaz, Stella Biderman<br>Moderator: Sasha Rush</td>
+            </tr>
+            <tr>
+              <td>5:30 pm - 5:40 pm</td>
+              <td>Closing Remarks</td>
+              <td>Workshop Organizers</td>
+            </tr>
+          </tbody>
+        </table> -->
+
+
+        <!-- <h2>Accepted Papers</h2>
+        <ul>
+          <li>
+            Michihiro Yasunaga, Jure Leskovec, Percy Liang.
+            <a href="https://openreview.net/forum?id=mAIHKEcg-sN">LinkBERT: Pretraining Language Models with Document Links</a>. 
+            <b>Contributed Talk</b>.
+          </li>
+          <li>
+            Takeshi Kojima, Shixiang Shane Gu, Machel Reid, Yutaka Matsuo, Yusuke Iwasawa.
+            <a href="https://openreview.net/forum?id=6p3AuaHAFiN">Large Language Models are Zero-Shot Reasoners</a>.
+          </li>
+          <li>
+            Zhuyun Dai, Arun Tejasvi Chaganty, Vincent Y Zhao, Aida Amini, Mike Green, Qazi Mamunur Rashid, Kelvin Guu.
+            <a href="https://openreview.net/forum?id=4Go-I0jf4a">Dialog Inpainting: Turning Documents into Dialogs</a>.
+            <b>Contributed Talk</b>.
+          </li>
+          <li>
+            Yoav Levine, Ori Ram, Daniel Jannai, Barak Lenz, Shai Shalev-Shwartz, Amnon Shashua, Kevin Leyton-Brown, Yoav Shoham.
+            <a href="https://openreview.net/forum?id=z3Bxu8xNJaF">Huge Frozen Language Models as Readers for Open-Domain Question Answering</a>.
+            <b>Contributed Talk</b>.
+          </li>
+          <li>
+            Jie Huang, Hanyin Shao, Kevin Chang.
+            <a href="https://openreview.net/forum?id=aimSsgpNSr">Are Large Pre-Trained Language Models Leaking Your Personal Information?</a>
+          </li>
+          <li>
+            Disha Shrivastava, Hugo Larochelle, Daniel Tarlow.
+            <a href="https://openreview.net/forum?id=bUDmRzeh3PT">Repository-Level Prompt Generation for Large Language Models of Code</a>.
+            <span class="icon"><i class="fa-solid fa-paperclip"></i></span>
+              <a href="https://knowledge-retrieval-workshop.github.io/assets/KLMN-2022-Workshop-Poster.pdf">Poster</a>
+          </li>
+          <li>
+            Man Luo, Mihir Parmar, Jayasurya Sevalur Mahendran, Sahit Jain, Samarth Rawal, Chitta Baral.
+            <a href="https://openreview.net/forum?id=grONYRLFkJ">SCONER: Scoring Negative Candidates Before Training Neural Re-Ranker For Question Answering</a>.
+            <span class="icon"><i class="fa-solid fa-paperclip"></i></span>
+              <a href="https://knowledge-retrieval-workshop.github.io/assets/SCONER_ICML_poster.pdf">Poster</a>
+            &nbsp;
+            <span class="icon"><i class="fa-solid fa-video"></i></span>
+              <a href="https://knowledge-retrieval-workshop.github.io/assets/SCONER_ICML_recording.mp4">Video</a>
+          </li>
+          <li>
+            Sebastian Hofstätter, Jiecao Chen, Karthik Raman, Hamed Zamani.
+            <a href="https://openreview.net/forum?id=ogMfFBkNsI6">Multi-Task Retrieval-Augmented Text Generation with Relevance Sampling</a>.
+          </li>
+          <li>
+            Gyuwan Kim, Jinhyuk Lee, Barlas Oguz, Wenhan Xiong, Yizhe Zhang, Yashar Mehdad, William Yang Wang.
+            <a href="https://openreview.net/forum?id=vtOrgYjli9R">Bridging the Training-Inference Gap for Dense Phrase Retrieval</a>.
+            <span class="icon"><i class="fa-solid fa-paperclip"></i></span>
+              <a href="https://knowledge-retrieval-workshop.github.io/assets/briding-gap-densephrases_poster_v3.pdf">Poster</a>
+          </li>
+          <li>
+            Minki Kang, Jin Myung Kwak, Jinheon Baek, Sung Ju Hwang.
+            <a href="https://openreview.net/forum?id=McHtKDi5h9">Knowledge-Consistent Dialogue Generation with Knowledge Graphs</a>.
+          </li>
+          <li>
+            Ahmad Pouramini.
+            <a href="https://openreview.net/forum?id=SfpsCVKeQ2N">Matching pre-training and Fine-tuning Methods for Knowledge Retrieval from pretrained Language Models</a>.
+          </li>
+          <li>
+            Uri Alon, Frank F. Xu, Junxian He, Sudipta Sengupta, Dan Roth, Graham Neubig.
+            <a href="https://openreview.net/forum?id=ZJZmKGM6UB">Neuro-Symbolic Language Modeling with Automaton-augmented Retrieval</a>.
+            <span class="icon"><i class="fa-solid fa-paperclip"></i></span>
+              <a href="https://knowledge-retrieval-workshop.github.io/assets/Retomaton_poster_workshop.pdf">Poster</a>
+            &nbsp;
+            <span class="icon"><i class="fa-solid fa-video"></i></span>
+              <a href="https://recorder-v3.slideslive.com/#/share?share=69099&amp;s=f862fc4f-577c-4a54-a820-1fbb4786afb9">Video</a>
+          </li>
+          <li>
+            Weijia Shi, Julian Michael, Suchin Gururangan, Luke Zettlemoyer.
+            <a href="https://knowledge-retrieval-workshop.github.io/assets/knnlm_workshop_paper.pdf">Nearest Neighbor Zero-Shot Inference</a>.
+          </li>
+        </ul> -->
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="title">Workshop Organizers</h2>
+      <div class="tile is-ancestor">
+
+        <!-- Person Information -->
+        <div class="tile is-2 p-4">
+          <div class="tile is-child">
+            <figure class="image is-square block">
+              <img src="./assets/Ningyu-Zhang.jpg" alt="Ningyu Zhang" class="is-rounded">
+            </figure>
+            <p class="title is-5 has-text-centered">Ningyu Zhang</p>
+            <p class="subtitle is-6 has-text-centered">Zhejiang University</p>
+          </div>
+        </div>
+        <!-- End of Person Information -->
+
+        <!-- Person Information -->
+        <div class="tile is-2 p-4">
+          <div class="tile is-child">
+            <figure class="image is-square block">
+              <img src="./assets/Tianxing-Wu.png" alt="Tianxing Wu" class="is-rounded">
+            </figure>
+            <p class="title is-5 has-text-centered">Tianxing Wu</p>
+            <p class="subtitle is-6 has-text-centered">Southeast University</p>
+          </div>
+        </div>
+        <!-- End of Person Information -->
+
+        <!-- Person Information -->
+        <div class="tile is-2 p-4">
+          <div class="tile is-child">
+            <figure class="image is-square block">
+              <img src="./assets/Meng-Wang.jpg" alt="Meng Wang" class="is-rounded">
+            </figure>
+            <p class="title is-5 has-text-centered">Meng Wang</p>
+            <p class="subtitle is-6 has-text-centered">Tongji University</p>
+          </div>
+        </div>
+        <!-- End of Person Information -->
+
+        <!-- Person Information -->
+        <div class="tile is-2 p-4">
+          <div class="tile is-child">
+            <figure class="image is-square block">
+              <img src="./assets/Guilin-Qi.jpg" alt="Guilin Qi" class="is-rounded">
+            </figure>
+            <p class="title is-5 has-text-centered">Guilin Qi</p>
+            <p class="subtitle is-6 has-text-centered">Southeast University</p>
+          </div>
+        </div>
+        <!-- End of Person Information -->
+
+        <!-- Person Information -->
+        <div class="tile is-2 p-4">
+          <div class="tile is-child">
+            <figure class="image is-square block">
+              <img src="./assets/Haofen-Wang.jpg" alt="Haofen Wang" class="is-rounded">
+            </figure>
+            <p class="title is-5 has-text-centered">Haofen Wang</p>
+            <p class="subtitle is-6 has-text-centered">Tongji University</p>
+          </div>
+        </div>
+        <!-- End of Person Information -->
+
+        <!-- Person Information -->
+        <div class="tile is-2 p-4">
+          <div class="tile is-child">
+            <figure class="image is-square block">
+              <img src="./assets/Huajun-Chen.jpg" alt="Huajun Chen" class="is-rounded">
+            </figure>
+            <p class="title is-5 has-text-centered">Huajun Chen</p>
+            <p class="subtitle is-6 has-text-centered">Zhejiang University</p>
+          </div>
+        </div>
+        <!-- End of Person Information -->
+
+      </div>
+      <div class="content">
+        <p>
+          For any questions, please contact us at <a href="mailto:knowledgeretrievalworkshop@gmail.com">knowledgeretrievalworkshop@gmail.com</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+<script src="chrome-extension://cdnlggbebabeoneeglhadpagegmflmbc/aiscripts/scriptBus.js"></script><span id="cnki_grabber" data-id="1699599045000" style="visibility: hidden;"></span><script></script></body></html>
