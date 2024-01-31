@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html><script id="allow-copy_script">(function agent() {
+    let unlock = false
+    document.addEventListener('allow_copy', (event) => {
+      unlock = event.detail.unlock
+    })
+
+    const copyEvents = [
+      'copy',
+      'cut',
+      'contextmenu',
+      'selectstart',
+      'mousedown',
+      'mouseup',
+      'mousemove',
+      'keydown',
+      'keypress',
+      'keyup',
+    ]
+    const rejectOtherHandlers = (e) => {
+      if (unlock) {
+        e.stopPropagation()
+        if (e.stopImmediatePropagation) e.stopImmediatePropagation()
+      }
+    }
+    copyEvents.forEach((evt) => {
+      document.documentElement.addEventListener(evt, rejectOtherHandlers, {
+        capture: true,
+      })
+    })
+  })()</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The First International OpenKG Workshop: Knowledge Graph and Large Language Models @IJCAI 2024</title>
+    <link rel="stylesheet" href="./assets/bulma-0.9.3.min.css">
+    <link rel="stylesheet" href="./assets/all.css">
+  </head>
+  <body class="is-size-5" _c_t_j1="1">
+  <section class="hero is-medium is-light">
+    <div class="hero-body">
+      <div class="container">
+        <div style="height: 60px">
+            <img src="./assets/logo.jpg" alt="OpenKG.CN" style="width: 60px;height: 100%;float: left">
+            <h2 class="subtitle is-size-2" style="height: 100%">The First International OpenKG Workshop:</h2>
+        </div>
+        <h1 class="title is-size-1">Knowledge Graph and Large Language Models @IJCAI 2024</h1>
+        <p class="is-size-4">August 03-09, 2024<br>
+          Jeju </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="content">
+        <h2>Overview</h2>
+        <p>
+       Large Language Models (LLMs), such as ChatGPT and GPT4 have revolutionized the realms of natural language processing and artificial intelligence, owing to their unprecedented capabilities and broad adaptability. 
+ However, the inherent ''black-box'' nature of LLMs sometimes compromises their ability to consistently access accurate knowledge. 
+ Moreover, LLMs still face with the problems of producing misinformation, biased information or malicious content. 
+ On the other hand, Knowledge Graphs (KGs), exemplified by platforms like Wikipedia and Wikidata, are structured knowledge models that offer rich, explicit and accurate knowledge. 
+ The integration of KGs can enhance the capabilities of LLMs, offering access to external knowledge and bolstering interpretability.
+ Yet, the dynamic nature of the world makes KGs challenging to construct and maintain, posing obstacles for methods that aim to handle new facts and represent emergent knowledge. 
+        </p>
+        <p>
+In response to these challenges, we are dedicated to establishing a premier forum for the exchange of innovative ideas and findings through the first international OpenKG workshop: Knowledge Graphs and Large Language Models. This workshop will feature two keynote speakers who provide comprehensive insights into the development of Knowledge Graphs and Large Language Models.
+Additionally, we will host a panel discussion featuring five distinguished researchers from both academia and industry to explore the challenges and opportunities presented by Knowledge Graphs and Large Language Models.
+Moreover, we will offer a session for the presentation of accepted papers, both orally and through poster displays.
+        </p>
+
+
+        <h2>Call for Papers</h2>
+        <p>
+         We welcome all submissions related to Knowledge Graph (KGs) and Large Language Models (LLMs), including:
+        </p>
+        <ul>
+          <li>LLM techniques for KG construction, alignment, and reasoning.</li>
+          <li>Enhancing LLMs with KGs.</li>
+          <li>Reasoning with LLMs and KG.</li>
+          <li>Theories of knowledge learning and storage for LLMs.</li>
+          <li>Knowledge editing for LLMs and KGs.</li>
+          <li> Explaining LLMs with KGs.</li>
+           <li>Domain-specific LLMs training leveraging KGs. </li>
+           <li>Agent learning with LLMs and KGs. </li>
+           <li>Multimodal learning for KGs and LLMs. </li>
+           <li>Low-resource learning for LLMs and KGs. </li>
+           <li>Applications of combing KGs and LLMs. </li>
+           <li>Open resources combining KGs and LLMs. </li>
+
+        </ul>
+        <p><b>Submission URL</b>: <a href="">TBD</a></p>
+        <p><b>Format</b>: All submissions must be in PDF format. Submissions are limited to <b>eight</b> content pages, including all figures and tables; unlimited additional pages containing references and supplementary materials are allowed. Reviewers may choose to read the supplementary materials but will not be required to. Camera-ready versions are also limited to <b>eight</b> content pages.
+        <p><b>Style file</b>: You must format your submission using the provided <a href="https://www.ijcai.org/authors_kit">LaTeX style file</a>, which is adapted from the official IJCAI 2024 LaTeX style file. Please include the references and supplementary materials in the same PDF as the main paper. The maximum file size for submissions is 50MB. Submissions that violate the style (e.g., by decreasing margins or font sizes) or page limits may be rejected without further review.</p>
+        <p><b>Dual-submission policy</b>: We welcome ongoing and unpublished work. We also welcome papers that are under review at the time of submission, or that have been recently accepted.</p>
+        <p><b>Non-archival</b>: Workshop submissions and reviews will be private. The camera-ready version of accepted papers will be shared on the workshop webpage. However, the hosting is not an official proceeding, so the papers can be subsequently / concurrently submitted to other venues.</p>
+        <p><b>In person presentation</b>: Accepted papers are expected to be presented in person.</p>
+
+        <h2>Important Dates</h2>
+        <p>
+          </p><ul>
+            <li><b>Submission deadline</b>: TBD, 2024 AOE</li>
+            <li><b>Notification to authors</b>: TBD, 2024</li>
+            <li><b>Camera-ready deadline</b>: TBD, 2024 AOE</li>
+          </ul>
+        <p></p>
+
+        <h2>Schedule</h2>
+        <!-- <table class="table is-striped">
+          <thead>
+            <tr> <th>Time</th> <th>Event</th> <th>Speaker</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>8:45 am - 9:00 am</td><td>Opening Remarks</td><td>Workshop Organizers</td><td></td></tr>
+            <tr>
+              <td>9:00 am - 9:30 am</td>
+              <td>Invited Talk 1</td>
+              <td>Nils Reimers</td>
+            </tr>
+            <tr>
+              <td>9:30 am - 10:00 am</td>
+              <td>Invited Talk 2</td>
+              <td>Sebastian Riedel</td>
+            </tr>
+            <tr>
+              <td>10:00 am - 10:30 am</td>
+              <td>Break</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>10:30 am - 11:00 am</td>
+              <td>Invited Talk 3</td>
+              <td>John Schulman</td>
+            </tr>
+            <tr>
+              <td>11:00 am - 12:00 pm</td>
+              <td>Poster Session</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>12:00 pm - 1:30 pm</td>
+              <td>Lunch Break</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1:30 pm - 2:00 pm</td>
+              <td>Invited Talk 4</td>
+              <td>Jimmy Lin</td>
+            </tr>
+            <tr>
+              <td>2:00 pm - 2:30 pm</td>
+              <td>Invited Talk 5</td>
+              <td>Ellie Pavlick</td>
+            </tr>
+            <tr>
+              <td>2:30 pm - 3:00 pm</td>
+              <td>Contributed Talks</td>
+              <td>
+                1. Dialog Inpainting: Turning Documents into Dialogs<br>
+                2. Huge Frozen Language Models as Readers for Open-Domain Question Answering<br>
+                3. LinkBERT: Pretraining Language Models with Document Links
+              </td>
+            </tr>
+            <tr>
+              <td>3:00 pm - 3:30 pm</td>
+              <td>Break</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>3:30 pm - 4:00 pm</td>
+              <td>Invited Talk 6</td>
+              <td>Danqi Chen</td>
+            </tr>
+            <tr>
+              <td>4:00 pm - 4:30 pm</td>
+              <td>Invited Talk 7</td>
+              <td>Quoc Le</td>
+            </tr>
+            <tr>
+              <td>4:30 pm - 5:30 pm</td>
+              <td>Panel Discussion</td>
+              <td>Panelists: Kenton Lee, Danqi Chen, Fernando Diaz, Stella Biderman<br>Moderator: Sasha Rush</td>
+            </tr>
+            <tr>
+              <td>5:30 pm - 5:40 pm</td>
+              <td>Closing Remarks</td>
+              <td>Workshop Organizers</td>
+            </tr>
+          </tbody>
+        </table> -->
+
+
+        <!-- <h2>Accepted Papers</h2>
+        <ul>
+          <li>
+            Michihiro Yasunaga, Jure Leskovec, Percy Liang.
+            <a href="https://openreview.net/forum?id=mAIHKEcg-sN">LinkBERT: Pretraining Language Models with Document Links</a>. 
+            <b>Contributed Talk</b>.
+          </li>
+          <li>
+            Takeshi Kojima, Shixiang Shane Gu, Machel Reid, Yutaka Matsuo, Yusuke Iwasawa.
+            <a href="https://openreview.net/forum?id=6p3AuaHAFiN">Large Language Models are Zero-Shot Reasoners</a>.
+          </li>
+          <li>
+            Zhuyun Dai, Arun Tejasvi Chaganty, Vincent Y Zhao, Aida Amini, Mike Green, Qazi Mamunur Rashid, Kelvin Guu.
+            <a href="https://openreview.net/forum?id=4Go-I0jf4a">Dialog Inpainting: Turning Documents into Dialogs</a>.
+            <b>Contributed Talk</b>.
+          </li>
+          <li>
+            Yoav Levine, Ori Ram, Daniel Jannai, Barak Lenz, Shai Shalev-Shwartz, Amnon Shashua, Kevin Leyton-Brown, Yoav Shoham.
+            <a href="https://openreview.net/forum?id=z3Bxu8xNJaF">Huge Frozen Language Models as Readers for Open-Domain Question Answering</a>.
+            <b>Contributed Talk</b>.
+          </li>
+          <li>
+            Jie Huang, Hanyin Shao, Kevin Chang.
+            <a href="https://openreview.net/forum?id=aimSsgpNSr">Are Large Pre-Trained Language Models Leaking Your Personal Information?</a>
+          </li>
+          <li>
+            Disha Shrivastava, Hugo Larochelle, Daniel Tarlow.
+            <a href="https://openreview.net/forum?id=bUDmRzeh3PT">Repository-Level Prompt Generation for Large Language Models of Code</a>.
+            <span class="icon"><i class="fa-solid fa-paperclip"></i></span>
+              <a href="https://knowledge-retrieval-workshop.github.io/assets/KLMN-2022-Workshop-Poster.pdf">Poster</a>
+          </li>
+          <li>
+            Man Luo, Mihir Parmar, Jayasurya Sevalur Mahendran, Sahit Jain, Samarth Rawal, Chitta Baral.
+            <a href="https://openreview.net/forum?id=grONYRLFkJ">SCONER: Scoring Negative Candidates Before Training Neural Re-Ranker For Question Answering</a>.
+            <span class="icon"><i class="fa-solid fa-paperclip"></i></span>
+              <a href="https://knowledge-retrieval-workshop.github.io/assets/SCONER_ICML_poster.pdf">Poster</a>
+            &nbsp;
+            <span class="icon"><i class="fa-solid fa-video"></i></span>
+              <a href="https://knowledge-retrieval-workshop.github.io/assets/SCONER_ICML_recording.mp4">Video</a>
+          </li>
+          <li>
+            Sebastian Hofstätter, Jiecao Chen, Karthik Raman, Hamed Zamani.
+            <a href="https://openreview.net/forum?id=ogMfFBkNsI6">Multi-Task Retrieval-Augmented Text Generation with Relevance Sampling</a>.
+          </li>
+          <li>
+            Gyuwan Kim, Jinhyuk Lee, Barlas Oguz, Wenhan Xiong, Yizhe Zhang, Yashar Mehdad, William Yang Wang.
+            <a href="https://openreview.net/forum?id=vtOrgYjli9R">Bridging the Training-Inference Gap for Dense Phrase Retrieval</a>.
+            <span class="icon"><i class="fa-solid fa-paperclip"></i></span>
+              <a href="https://knowledge-retrieval-workshop.github.io/assets/briding-gap-densephrases_poster_v3.pdf">Poster</a>
+          </li>
+          <li>
+            Minki Kang, Jin Myung Kwak, Jinheon Baek, Sung Ju Hwang.
+            <a href="https://openreview.net/forum?id=McHtKDi5h9">Knowledge-Consistent Dialogue Generation with Knowledge Graphs</a>.
+          </li>
+          <li>
+            Ahmad Pouramini.
+            <a href="https://openreview.net/forum?id=SfpsCVKeQ2N">Matching pre-training and Fine-tuning Methods for Knowledge Retrieval from pretrained Language Models</a>.
+          </li>
+          <li>
+            Uri Alon, Frank F. Xu, Junxian He, Sudipta Sengupta, Dan Roth, Graham Neubig.
+            <a href="https://openreview.net/forum?id=ZJZmKGM6UB">Neuro-Symbolic Language Modeling with Automaton-augmented Retrieval</a>.
+            <span class="icon"><i class="fa-solid fa-paperclip"></i></span>
+              <a href="https://knowledge-retrieval-workshop.github.io/assets/Retomaton_poster_workshop.pdf">Poster</a>
+            &nbsp;
+            <span class="icon"><i class="fa-solid fa-video"></i></span>
+              <a href="https://recorder-v3.slideslive.com/#/share?share=69099&amp;s=f862fc4f-577c-4a54-a820-1fbb4786afb9">Video</a>
+          </li>
+          <li>
+            Weijia Shi, Julian Michael, Suchin Gururangan, Luke Zettlemoyer.
+            <a href="https://knowledge-retrieval-workshop.github.io/assets/knnlm_workshop_paper.pdf">Nearest Neighbor Zero-Shot Inference</a>.
+          </li>
+        </ul> -->
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="title">Workshop Organizers</h2>
+      <div class="tile is-ancestor">
+
+        <!-- Person Information -->
+        <div class="tile is-2 p-4">
+          <div class="tile is-child">
+            <figure class="image is-square block">
+              <img src="./assets/Ningyu-Zhang.jpg" alt="Ningyu Zhang" class="is-rounded">
+            </figure>
+            <p class="title is-5 has-text-centered">Ningyu Zhang</p>
+            <p class="subtitle is-6 has-text-centered">Zhejiang University</p>
+          </div>
+        </div>
+        <!-- End of Person Information -->
+
+        <!-- Person Information -->
+        <div class="tile is-2 p-4">
+          <div class="tile is-child">
+            <figure class="image is-square block">
+              <img src="./assets/Tianxing-Wu.png" alt="Tianxing Wu" class="is-rounded">
+            </figure>
+            <p class="title is-5 has-text-centered">Tianxing Wu</p>
+            <p class="subtitle is-6 has-text-centered">Southeast University</p>
+          </div>
+        </div>
+        <!-- End of Person Information -->
+
+        <!-- Person Information -->
+        <div class="tile is-2 p-4">
+          <div class="tile is-child">
+            <figure class="image is-square block">
+              <img src="./assets/Meng-Wang-1.jpg" alt="Meng Wang" class="is-rounded">
+            </figure>
+            <p class="title is-5 has-text-centered">Meng Wang</p>
+            <p class="subtitle is-6 has-text-centered">Tongji University</p>
+          </div>
+        </div>
+        <!-- End of Person Information -->
+
+        <!-- Person Information -->
+        <div class="tile is-2 p-4">
+          <div class="tile is-child">
+            <figure class="image is-square block">
+              <img src="./assets/Guilin-Qi.jpg" alt="Guilin Qi" class="is-rounded">
+            </figure>
+            <p class="title is-5 has-text-centered">Guilin Qi</p>
+            <p class="subtitle is-6 has-text-centered">Southeast University</p>
+          </div>
+        </div>
+        <!-- End of Person Information -->
+
+        <!-- Person Information -->
+        <div class="tile is-2 p-4">
+          <div class="tile is-child">
+            <figure class="image is-square block">
+              <img src="./assets/Haofen-Wang.jpg" alt="Haofen Wang" class="is-rounded">
+            </figure>
+            <p class="title is-5 has-text-centered">Haofen Wang</p>
+            <p class="subtitle is-6 has-text-centered">Tongji University</p>
+          </div>
+        </div>
+        <!-- End of Person Information -->
+
+        <!-- Person Information -->
+        <div class="tile is-2 p-4">
+          <div class="tile is-child">
+            <figure class="image is-square block">
+              <img src="./assets/Huajun-Chen.jpg" alt="Huajun Chen" class="is-rounded">
+            </figure>
+            <p class="title is-5 has-text-centered">Huajun Chen</p>
+            <p class="subtitle is-6 has-text-centered">Zhejiang University</p>
+          </div>
+        </div>
+        <!-- End of Person Information -->
+
+      </div>
+      <div class="content">
+        <p>
+          For any questions, please contact us at <a href="">zhangningyu at zju dot edu dot cn</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+<script src="chrome-extension://cdnlggbebabeoneeglhadpagegmflmbc/aiscripts/scriptBus.js"></script><span id="cnki_grabber" data-id="1699599045000" style="visibility: hidden;"></span><script></script></body></html>
