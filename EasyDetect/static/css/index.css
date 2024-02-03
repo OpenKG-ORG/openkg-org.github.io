@@ -13,8 +13,9 @@ body {
     margin-bottom: 5px;
 }
 
-.dnerf {
+.mmmu {
   font-variant: small-caps;
+  font-weight: bold;
 }
 
 
@@ -25,6 +26,13 @@ body {
 
 .teaser {
   font-family: 'Google Sans', sans-serif;
+}
+
+
+.publication-links {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center; 
 }
 
 
@@ -114,44 +122,94 @@ body {
   overflow: hidden;
 }
 
-.results-carousel .item {
-  margin: 5px;
+/* .results-carousel .item {
+  margin: 20px;
   overflow: hidden;
   border: 1px solid #bbb;
   border-radius: 10px;
-  padding: 0;
+  padding: 5px;
   font-size: 0;
+} */
+
+.stats-image {
+  max-height: 250px;
 }
 
-.results-carousel video {
-  margin: 0;
+#org-banners {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.org-banner {
+  /* margin: 5px; */
+  max-width: 100%;
+  height: 6em;
+  margin: 10px;
+  padding: 10px;
+}
+
+.chart-grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+.chart-item {
+  text-align: center;
+}
+
+.chart-label {
+  margin-top: 5px;
+}
+
+/* 媒体查询，只有当浏览器窗口宽度大于600px时才会应用 */
+@media (min-width: 600px) {
+  .chart-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+/* 当浏览器窗口宽度大于900px时 */
+@media (min-width: 900px) {
+  .chart-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+.bottom-text {
+  margin-top: 30px; 
 }
 
 
-.interpolation-panel {
-  background: #f5f5f5;
-  border-radius: 10px;
+.model-labels-container {
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 8px; 
 }
 
-.interpolation-panel .interpolation-image {
-  width: 100%;
-  border-radius: 5px;
+.model-label {
+  display: inline-block;
+  padding: 4px 10px;
+  margin: 5px;
+  border-radius: 3px;
+  color: rgb(255, 255, 255);
 }
 
-.interpolation-video-column {
+.leaderboard-label {
+  display: inline-block;
+  padding: 4px 10px;
+  margin: 5px;
+  border-radius: 3px;
+  color: rgb(48, 48, 48);
 }
 
-.interpolation-panel .slider {
-  margin: 0 !important;
-}
-
-.interpolation-panel .slider {
-  margin: 0 !important;
-}
-
-#interpolation-image-wrapper {
-  width: 100%;
-}
-#interpolation-image-wrapper img {
-  border-radius: 5px;
+.box {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  height: 100%;
+  margin: 5px; 
 }

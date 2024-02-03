@@ -267,9 +267,10 @@
   </div>
 </section> -->
 
-<section class="section">
+
+ <!-- Abstract. -->
+<!-- <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
@@ -280,137 +281,251 @@
             Prior research in this domain has been constrained by a narrow focus on singular tasks, an inadequate range of hallucination categories addressed, and a lack of detailed granularity.
             In response to these challenges, our work expands the investigative horizons of hallucination detection. 
             We present a novel meta-evaluation benchmark, <b>MHaluBench</b>, meticulously crafted to facilitate the evaluation of advancements in hallucination detection methods. 
-            Additionally, we unveil a novel unified multimodal hallucination detection framework, <b>UniHDet</b>, which leverages a suite of auxiliary tools to validate the occurrence of hallucinations robustly.
-            We demonstrate the effectiveness of <b>UniHDet</b> through meticulous evaluation and comprehensive analysis. 
+            Additionally, we unveil a novel unified multimodal hallucination detection framework, <b>UniHD</b>, which leverages a suite of auxiliary tools to validate the occurrence of hallucinations robustly.
+            We demonstrate the effectiveness of <b>UniHD</b> through meticulous evaluation and comprehensive analysis. 
             We also provide strategic insightson the application of specific tools for addressing various categories of hallucinations.
-
-    
           </p>
         </div>
       </div>
     </div>
-    <br>
-    <br>
-    <!-- <br>
-    <br> -->
+</section> -->
+<!-- Abstract. -->
 
-    <!--/ MHaluBench. -->
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Unified Multimodal Hallucination Detection</h2>
+        <h2 class="title is-3">🔔News</h2>
         <div class="content has-text-justified">
-          <img id="model" width="90%" src="images/view.png">
+          <p>
+            <b>🚀[2024-01-31]: We release the easy-to-use demo for multimodal hallucination detection on the <a href="http://easydetect.openkg.cn/">Demo-EasyDetect</a>!🌟</b>
+          </p>
+          <p>
+            <b>🔥[2023-12-15]: Our fact-conflicting hallucination detection benchmark is now available on the <a href="https://huggingface.co/datasets/zjunlp/FactCHD"><b>FactCHD</b></a>. Abstract introduction can refer to the <a href="https://www.zjukg.org/project/FactCHD/"><b>Home Page</b></a> 😆</b>
+          </p>
+      </div>      
+        <h2 class="title is-3">Introduction</h2>
+        <div class="content has-text-justified">
+          <p>
+            Despite significant strides in multimodal tasks, Multimodal Large Language Models (MLLMs) are plagued by the critical issue of hallucination. 
+            The reliable detection of such hallucinations in MLLMs has, therefore, become a vital aspect of model evaluation and the safeguarding of practical application deployment.
+            Prior research in this domain has been constrained by a narrow focus on singular tasks, an inadequate range of hallucination categories addressed, and a lack of detailed granularity.
+            In response to these challenges, our work expands the investigative horizons of hallucination detection. 
+            We present a novel meta-evaluation benchmark, <b>MHaluBench</b>, meticulously crafted to facilitate the evaluation of advancements in hallucination detection methods. 
+            Additionally, we unveil a novel unified multimodal hallucination detection framework, <b>UniHD</b>, which leverages a suite of auxiliary tools to validate the occurrence of hallucinations robustly.
+            We demonstrate the effectiveness of <b>UniHD</b> through meticulous evaluation and comprehensive analysis. 
+            We also provide strategic insightson the application of specific tools for addressing various categories of hallucinations.
+            </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</div>
+</section>
+
+    
+    <section class="hero is-light is-small">
+      <div class="hero-body has-text-centered">
+      <h1 class="title is-1">
+        <span class="mmmu"  style="vertical-align: middle">Unified Multimodal Hallucination Detection</span>
+      </h1>
+      </div>
+    </section>
+
+    <!--/ MHaluBench. -->
+    <section class="section">
+    <div class="columns is-centered has-text-justified">
+      <div class="column is-four-fifths">
+        <div class="content has-text-centered">
+          <img id="model" width="55%" src="images/view.png" class="center">
           <p class="has-text-centered">
             Figure 1: <b>Unified view of multimodal hallucination detection.</b>
         </div>
-        <div class="content has-text-justified">
-          <img id="model" width="90%" src="images/intro.jpg">
+        <div class="content has-text-centered">
+          <img id="model" width="55%" src="images/intro.jpg" class="center">
           <p class="has-text-centered">
             Figure 2: <b>Unified multimodal hallucination detection</b> aims to identify and detect modality-conflicting hallucinations at various levels such as object, attribute, and scene-text, as well as fact-conflicting hallucinations in both image-to-text and text-to-image generation. 
           </p>
         </div>
       </div>
     </div>
-    <br>
+    </section>
     <br>
 
 
-       <!--/ MHaluBench. -->
-       <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">MHaluBench Statistic</h2>
-          <div class="content has-text-justified">
-            <img id="model" width="100%" src="images/datasetinfo.jpg">
-            <p class="has-text-centered">
-              Table 1: <b>A comparison of benchmarks w.r.t existing fact-checking or hallucination evaluation.</b> “Check.” indicates verifying factual consistency, “Eval.” denotes evaluating hallucinations generated by different LLMs, and its response is based on different LLMs under test, while “Det.” embodies the evaluation of a detector’s capability in identifying hallucinations.
+    <section class="hero is-light is-small">
+      <div class="hero-body has-text-centered">
+      <h1 class="title is-1">
+        <span class="mmmu"  style="vertical-align: middle">MHaluBench Dataset</span>
+      </h1>
+      </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="section">
+        <div class="columns is-centered has-text-centered">
+          <!-- <div class="column is-full-width has-text-centered"> -->
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Comparisons with Existing Benchmarks</h2>
+            <div class="content has-text-justified">
+              <p>
+                To further distinguish the difference between <i>dataset</i> and other existing ones, we elaborate the benchmark details in Figure. 
+                From the <i>breadth</i> perspective, the prior benchmarks are heavily focused on daily knowledge and common sense. 
+                The covered image format is also limited. Our benchmark aims to cover college-level knowledge with 30 image formats including diagrams, 
+                tables, charts, chemical structures, photos, paintings, geometric shapes, music sheets, medical images, etc. 
+                In the <i>depth</i> aspect, the previous benchmarks normally require commonsense knowledge or simple physical or temporal reasoning. 
+                In contrast, our benchmark requires deliberate reasoning with college-level subject knowledge.
             </p>
-            <br>
-          </div>
-          <div class="content has-text-justified">
-            <img id="model" width="60%" src="images/饼图.png">
-            <p class="has-text-centered">
-              Figure 2: <b>Claim-Level data statistics of MHaluBench.</b> “IC” signifies Image Captioning and “T2I” indicates Text-to-Image synthesis, respectively
-            </p>
-            <br>
-          </div>
-          <div class="content has-text-justified">
-            <img id="model" width="75%" src="images/条形图.png">
-            <p class="has-text-centered">
-              Figure 3:  <b>Distribution of hallucination categories within hallucination-labeled claims of MHaluBench.</b>
-            </p>
+            <div class="content has-text-centered">
+              <img id="model" width="100%" src="images/datasetinfo.jpg" class="center">
+              <p class="has-text-centered">
+                Table 1: </Table><b>A comparison of benchmarks w.r.t existing fact-checking or hallucination evaluation.</b> “Check.” indicates verifying factual consistency, “Eval.” denotes evaluating hallucinations generated by different LLMs, and its response is based on different LLMs under test, while “Det.” embodies the evaluation of a detector’s capability in identifying hallucinations.
+              </p>
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+            <h2 class="title is-3">Statistics</h2>
+            <div id="results-carousel" class="carousel results-carousel">
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="images/饼图.png" width="35%"/>
+                  <p>
+                    Figure 3: <b>Claim-Level data statistics of MHaluBench.</b> “IC” signifies Image Captioning and “T2I” indicates Text-to-Image synthesis, respectively
+                  </p>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="images/条形图.png" width="50%"/>
+                  <p> 
+                    Figure 4: <b>Distribution of hallucination categories within hallucination-labeled claims of MHaluBench..</b>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <br>
-      <br>
-
-
-    <!-- Easy Detect. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-six-fifths">
-        <h2 class="title is-3">UniHDet Framework</h2>
-        <img id="model" width="100%" src="images/framework.png">
-        <p class="has-text-centered">
-          Figure 4: <b>The specific illustration of EASYDETECT for unified multimodal hallucination detection</b>.
-        </p>
-        <br>
-      </div>
-    </div>
-    <br>
-    <br>
-    <!--  Easy Detect.  -->
+    </section>
     
-    <!-- Paper Main Results -->
+
+
+
+  <!-- Easy Detect. -->
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+    <h1 class="title is-1">
+      <span class="mmmu"  style="vertical-align: middle">UniHD Framework</span>
+    </h1>
+    </div>
+  </section>
+
+
+  <section class="section">
     <div class="columns is-centered has-text-centered">
-      <div class="column is-six-fifths">
-        <h2 class="title is-3">Main Results</h2>
-        <img id="model" width="90%" src="images/main_exp.png">
-        <p class="has-text-centered">
-          Table 2: Experimental results of UniHDet powered by Gemini and GPT-4v on Image-to-Text Generation and
-          Text-to-Image Generation. The default F1 score is Micro-F1, whereas Mac.F1 represents the Macro-F1 score.
-        </p>
-        <!-- <img id="model" width="40%" src="images/analysis.jpg">
-        <p class="has-text-centered">
-          Table 2: The statistical analysis was conducted on samples with hallucinatory labels. 
-          In this analysis, the x-axis labels “O”, “A”, “S” and “F” refer to object, attribute, scene-text, and fact, respectively
-        </p> -->
-        <br>
+      <div class=column is-four-fifths">
+        <!-- <h2 class="title is-3">Statistics</h2> -->
+          <div class="content has-text-justified">
+            <div class="content has-text-centered">
+              <img src="images/framework.png" width="80%"/>
+              <p>
+                Figure 5: <b>The specific illustration of UniHD for unified multimodal hallucination detection</b>.
+              </p>
+            </div>
+          </div>
       </div>
     </div>
-    <br>
-    <br>
-    <!-- Paper Main Results -->
+  </section>
+  <!--  Easy Detect.  -->
+    
 
-    <!-- Paper Analysis -->
+  <!-- Paper Main Results -->
+
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+    <h1 class="title is-1">
+      <span class="mmmu"  style="vertical-align: middle">Experiment Results</span>
+    </h1>
+    </div>
+  </section>
+
+
+  <section class="section">
     <div class="columns is-centered has-text-centered">
-      <div class="column is-six-fifths">
-        <h2 class="title is-3">Experimental Analysis</h2>
-        <img id="model" width="45%" src="images/analysis.png">
-        <p class="has-text-centered">
-          Figure 5: <b>The statistical analysis was conducted on samples with hallucinatory labels.</b>
-          In this analysis, the x-axis labels “O”, “A”, “S” and “F” refer to object, attribute, scene-text, and fact, respectively
-        </p>
-        <br>
-        <img id="model" width="60%" src="images/analysis-2.png">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Main Results</h2>
+        <div class="content has-text-justified">
+        <div class="content has-text-centered">
+          <img id="model" width="85%" src="images/main_exp.png" class="center">
+          <p class="has-text-centered">
+            Table 2: <b> Experimental results of UniHD powered by Gemini and GPT-4v on Image-to-Text Generation and
+              Text-to-Image Generation.</b> The default F1 score is Micro-F1, whereas Mac.F1 represents the Macro-F1 score.
+          </p>
+        </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Analysis</h2>
+        <div class="content has-text-justified">
+          <div class="content has-text-centered">
+            <img id="model" width="50%" src="images/analysis.png">
+            <p class="has-text-centered">
+              Figure 6: <b>The statistical analysis was conducted on samples with hallucinatory labels.</b>
+              In this analysis, the x-axis labels “O”, “A”, “S” and “F” refer to object, attribute, scene-text, and fact, respectively
+            </p>
+            <br>
+        <!-- <img id="model" width="60%" src="images/analysis-2.png">
         <p class="has-text-centered">
           Figure 6: <b>Comparison of claim-level hallucination ratios across MLLMs.</b> We randomly select a set of 20 prompts from MHDEB for each of the IC, VQA, and T2I. 
           Responses for these prompts are generated by each of the evaluated MLLMs
         </p>
-        <br>
-        <img id="model" width="100%" src="images/case_analysis.png">
-        <p class="has-text-centered">
-          Figure 6: <b>Case Study.</b>  The upper section depicts two exemplary cases where both UNIHDET and Self-Check
-          (2-shot) arrive at correct judgments, with a comparative demonstration of UNIHDET providing explanations of
-          superior reasonability. UNIHDET (a) reveals a failure case where the tool presents erroneous evidence, leading to
-          an incorrect verification outcome. Conversely, UNIHDET (b) highlights a scenario where, despite the tool offering
-          valid and correct evidence, GPT-4V persists in its original stance, resulting in a flawed verification
-        </p>
-        <br>
+        <br> -->
+            <img id="model" width="80%" src="images/case_analysis.png">
+            <p class="has-text-centered">
+              Figure 7: <b>Case Study.</b>  The upper section depicts two exemplary cases where both UniHD and Self-Check
+              (2-shot) arrive at correct judgments, with a comparative demonstration of UniHD providing explanations of
+              superior reasonability. UniHD (a) reveals a failure case where the tool presents erroneous evidence, leading to
+              an incorrect verification outcome. Conversely, UniHD (b) highlights a scenario where, despite the tool offering
+              valid and correct evidence, GPT-4V persists in its original stance, resulting in a flawed verification
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- Paper Analysis. -->
-  </div>
-</section>
+
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">MLLM Hallucination Evaluation</h2>
+        <div class="content has-text-justified">
+        <div class="content has-text-centered">
+          <img id="model" width="50%" src="images/analysis-2.png" class="center">
+          <p class="has-text-centered">
+            Figure 8: <b>Comparison of claim-level hallucination ratios across MLLMs.</b> We randomly select a set of 20 prompts from MHDEB for each of the IC, VQA, and T2I. 
+            Responses for these prompts are generated by each of the evaluated MLLMs
+          </p>
+        </div>
+        </div>
+      </div>
+    </div>
+    
+  </section> 
+  
+  <!-- Paper Main Results -->
 
 
 <section class="section" id="BibTeX">
@@ -427,7 +542,7 @@
         primaryClass={cs.CL}
 }
 
-@article{chen2024UniHDet,
+@article{chen2024UniHD,
   author       = {Xiang Chen and Chenxi Wang and Yida Xue, Ningyu Zhang 
     and Xiaoyan Yang and Qiang Li and Yue Shen and Jinjie Gu and Huajun Chen},
   title        = {Unified Hallucination Detection for Multimodal Large Language Models},
