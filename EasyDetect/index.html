@@ -229,6 +229,9 @@
               Yue Shen<sup>&#x2662;</sup>
             </span>, 
             <span class="author-block" style="color:#00A4EF;font-weight:normal;">
+              Lei Liang<sup>&#x2662;</sup>
+            </span>, 
+            <span class="author-block" style="color:#00A4EF;font-weight:normal;">
               Jinjie Gu<sup>&#x2662;</sup>
             </span>, 
             <span class="author-block" style="color:#00A4EF;font-weight:normal;">
@@ -379,7 +382,16 @@
           <p>
             <b>🔥[2023-12-15]: Our fact-conflicting hallucination detection benchmark is now available on the <a href="https://huggingface.co/datasets/zjunlp/FactCHD"><b>FactCHD</b></a>. Abstract introduction can refer to the <a href="https://www.zjukg.org/project/FactCHD/"><b>Home Page</b></a> 😆</b>
           </p>
-      </div>      
+        </div> 
+        <h2 class="title is-3">🌻Acknowledgement</h2>
+        <div class="content has-text-justified">
+          <p>
+            <b>Part implementation of this project were assisted and inspired by the related hallucination toolkits including <a href="https://github.com/GAIR-NLP/factool">EasyDetect</a>, <a href="https://github.com/BradyFU/Woodpecker">Woodpecker</a>, and others. 
+            This repository also benefits from the public project from <a href="https://github.com/X-PLUG/mPLUG-Owl">mPLUG-Owl</a>, <a href="https://github.com/Vision-CAIR/MiniGPT-4">MiniGPT-4</a>,  <a href="https://github.com/haotian-liu/LLaVA">LLaVA</a>, <a href="https://github.com/IDEA-Research/GroundingDINO">GroundingDINO</a>, and <a href="https://github.com/Mountchicken/Union14M">MAERec</a>. 
+            We follow the same license for open-sourcing and thank them for their contributions to the community.</b>
+            
+          </p>
+        </div>     
         <h2 class="title is-3">Introduction</h2>
         <div class="content has-text-justified">
           <p>
@@ -418,7 +430,7 @@
             Figure 1: <b>Unified view of multimodal hallucination detection.</b>
         </div>
         <div class="content has-text-centered">
-          <img id="model" width="55%" src="images/intro.jpg" class="center">
+          <img id="model" width="55%" src="images/intro.png" class="center">
           <p class="has-text-centered">
             Figure 2: <b>Unified multimodal hallucination detection</b> aims to identify and detect modality-conflicting hallucinations at various levels such as object, attribute, and scene-text, as well as fact-conflicting hallucinations in both image-to-text and text-to-image generation. 
           </p>
@@ -606,24 +618,35 @@
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>
-@article{chen2024factchd,
-        title={FactCHD: Benchmarking Fact-Conflicting Hallucination Detection}, 
-        author={Xiang Chen and Duanzheng Song and Honghao Gui and Chenxi Wang and Ningyu Zhang 
-          and Jiang Yong and Fei Huang and Chengfei Lv and Dan Zhang and Huajun Chen},
-        year={2024},
-        eprint={2310.12086},
-        archivePrefix={arXiv},
-        primaryClass={cs.CL}
-}
+      @article{chen23factchd,
+        author       = {Xiang Chen and Duanzheng Song and Honghao Gui and Chengxi Wang and Ningyu Zhang and 
+                        Jiang Yong and Fei Huang and Chengfei Lv and Dan Zhang and Huajun Chen},
+        title        = {FactCHD: Benchmarking Fact-Conflicting Hallucination Detection},
+        journal      = {CoRR},
+        volume       = {abs/2310.12086},
+        year         = {2023},
+        url          = {https://doi.org/10.48550/arXiv.2310.12086},
+        doi          = {10.48550/ARXIV.2310.12086},
+        eprinttype    = {arXiv},
+        eprint       = {2310.12086},
+        biburl       = {https://dblp.org/rec/journals/corr/abs-2310-12086.bib},
+        bibsource    = {dblp computer science bibliography, https://dblp.org}
+      }
 
-@article{chen2024unified,
-  title={Unified Hallucination Detection for Multimodal Large Language Models}, 
-  author={Xiang Chen and Chenxi Wang and Yida Xue and Ningyu Zhang and Xiaoyan Yang and Qiang Li and Yue Shen and Jinjie Gu and Huajun Chen},
-  year={2024},
-  eprint={2402.03190},
-  archivePrefix={arXiv},
-  primaryClass={cs.CL}
-}
+      @article{chen2024unified,
+        author       = {Xiang Chen and Chenxi Wang and Yida Xue and Ningyu Zhang and Xiaoyan Yang and 
+                        Qiang Li and Yue Shen and Lei Liang and Jinjie Gu and Huajun Chen},
+        title        = {Unified Hallucination Detection for Multimodal Large Language Models},
+        journal      = {CoRR},
+        volume       = {abs/2402.03190},
+        year         = {2024},
+        url          = {https://doi.org/10.48550/arXiv.2402.03190},
+        doi          = {10.48550/ARXIV.2402.03190},
+        eprinttype    = {arXiv},
+        eprint       = {2402.03190},
+        biburl       = {https://dblp.org/rec/journals/corr/abs-2402-03190.bib},
+        bibsource    = {dblp computer science bibliography, https://dblp.org}
+      }
 </code></pre>
   </div>
 </section>
