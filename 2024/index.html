@@ -1,354 +1,948 @@
 <!DOCTYPE html>
-<html><script id="allow-copy_script">(function agent() {
-    let unlock = false
-    document.addEventListener('allow_copy', (event) => {
-      unlock = event.detail.unlock
-    })
+<html lang="en">
 
-    const copyEvents = [
-      'copy',
-      'cut',
-      'contextmenu',
-      'selectstart',
-      'mousedown',
-      'mouseup',
-      'mousemove',
-      'keydown',
-      'keypress',
-      'keyup',
-    ]
-    const rejectOtherHandlers = (e) => {
-      if (unlock) {
-        e.stopPropagation()
-        if (e.stopImmediatePropagation) e.stopImmediatePropagation()
-      }
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Large Language Models for Agents</title>
+    <meta content="Workshop on LLM Agents @ ICLR 2024" name="description">
+    <meta content name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i, Raleway:300,300i,400,400i,500,500i,600,600i,700,700i, Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <style>
+    li {
+      margin: 10px 10px 10px 10px;
     }
-    copyEvents.forEach((evt) => {
-      document.documentElement.addEventListener(evt, rejectOtherHandlers, {
-        capture: true,
-      })
-    })
-  })()</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The First International OpenKG Workshop: Knowledge Graph and Large Language Models @IJCAI 2024</title>
-    <link rel="stylesheet" href="./assets/bulma-0.9.3.min.css">
-    <link rel="stylesheet" href="./assets/all.css">
+    </style>
+
+    <style>
+  .interactive-panel {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin-bottom: 15px; /* Add margin to the bottom of each panel */
+  }
+
+  .interactive-panel:hover {
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    cursor: pointer;
+  }
+</style>
+
+    <style>
+  /* CSS for coloring schedule rows */
+  .morning-session {
+    background-color: #fff4d5; /* Light yellow for morning sessions */
+  }
+
+  .afternoon-session {
+    background-color: #dbe7f2; /* Light blue for afternoon sessions */
+  }
+
+  .evening-session {
+    background-color: #e9daeb; /* Light purple for evening sessions */
+  }
+
+  .night-session {
+    background-color: #f9f0ed; /* Light purple for evening sessions */
+  }
+
+</style>
+
   </head>
-  <body class="is-size-5" _c_t_j1="1">
-  <section class="hero is-medium is-light">
-    <div class="hero-body">
-      <div class="container">
-        <div style="height: 60px">
-            <img src="./assets/logo.jpg" alt="OpenKG.CN" style="width: 60px;height: 100%;float: left">
-            <h2 class="subtitle is-size-2" style="height: 100%">The First International OpenKG Workshop:</h2>
+
+  <body>
+
+    <!-- ======= Header ======= -->
+    <header id="header"
+      class="fixed-top d-flex align-items-center  header-transparent ">
+      <div class="container d-flex align-items-center justify-content-between">
+
+        <div class="logo">
+
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <h1><a href="https://llmagents.github.io/" target="blank_"> </a></h1>
+
+          <!-- <img src="assets/img/logo.png" alt="TamingLLM@SIGDIAL & INLG 2023"> -->
+
+          <!-- <p style="margin : 0; padding-top:0; padding-left: 80px; padding-bottom:0;  line-height:0; font-size: 10px; text-align: center;" class="green-text">
+        May 26-28, 2022 ,  Dublin
+      </p> -->
         </div>
-        <h1 class="title is-size-1">Knowledge Graph and Large Language Models @IJCAI 2024</h1>
-        <p class="is-size-4">August 03-09, 2024<br>
-          Jeju </p>
-      </div>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="content">
-        <h2>Overview</h2>
-        <p>
-       Large Language Models (LLMs), such as ChatGPT and GPT4 have revolutionized the realms of natural language processing and artificial intelligence, owing to their unprecedented capabilities and broad adaptability. 
- However, the inherent ''black-box'' nature of LLMs sometimes compromises their ability to consistently access accurate knowledge. 
- Moreover, LLMs still face with the problems of producing misinformation, biased information or malicious content. 
- On the other hand, Knowledge Graphs (KGs), exemplified by platforms like Wikipedia and Wikidata, are structured knowledge models that offer rich, explicit and accurate knowledge. 
- The integration of KGs can enhance the capabilities of LLMs, offering access to external knowledge and bolstering interpretability.
- Yet, the dynamic nature of the world makes KGs challenging to construct and maintain, posing obstacles for methods that aim to handle new facts and represent emergent knowledge. 
-        </p>
-        <p>
-In response to these challenges, we are dedicated to establishing a premier forum for the exchange of innovative ideas and findings through the first international OpenKG workshop: Knowledge Graphs and Large Language Models. This workshop will feature two keynote speakers who provide comprehensive insights into the development of Knowledge Graphs and Large Language Models.
-Additionally, we will host a panel discussion featuring five distinguished researchers from both academia and industry to explore the challenges and opportunities presented by Knowledge Graphs and Large Language Models.
-Moreover, we will offer a session for the presentation of accepted papers, both orally and through poster displays.
-        </p>
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+            <!-- <li><a class="nav-link scrollto" href="#about">About</a></li> -->
+            <li><a class="nav-link scrollto" href="#topics">Topics</a></li>
+            <li><a class="nav-link scrollto" href="#cfp">Call for Papers</a></li>
+            <li><a class="nav-link scrollto" href="#speaker">Speakers</a></li>
 
-
-        <h2>Call for Papers</h2>
-        <p>
-         We welcome all submissions related to Knowledge Graph (KGs) and Large Language Models (LLMs), including:
-        </p>
-        <ul>
-          <li>LLM techniques for KG construction, alignment, and reasoning.</li>
-          <li>Enhancing LLMs with KGs.</li>
-          <li>Reasoning with LLMs and KG.</li>
-          <li>Theories of knowledge learning and storage for LLMs.</li>
-          <li>Knowledge editing for LLMs and KGs.</li>
-          <li> Explaining LLMs with KGs.</li>
-           <li>Domain-specific LLMs training leveraging KGs. </li>
-           <li>Agent learning with LLMs and KGs. </li>
-           <li>Multimodal learning for KGs and LLMs. </li>
-           <li>Low-resource learning for LLMs and KGs. </li>
-           <li>Applications of combing KGs and LLMs. </li>
-           <li>Open resources combining KGs and LLMs. </li>
-
-        </ul>
-        <p><b>Submission URL</b>: <a href="">TBD</a></p>
-        <p><b>Format</b>: All submissions must be in PDF format. Submissions are limited to <b>seven</b> content pages, including all figures and tables; unlimited additional pages containing references and supplementary materials are allowed. Reviewers may choose to read the supplementary materials but will not be required to. Camera-ready versions are also limited to <b>eight</b> content pages.
-        <p><b>Style file</b>: You must format your submission using the provided <a href="https://www.ijcai.org/authors_kit">LaTeX style file</a>, which is adapted from the official IJCAI 2024 LaTeX style file. Please include the references and supplementary materials in the same PDF as the main paper. The maximum file size for submissions is 50MB. Submissions that violate the style (e.g., by decreasing margins or font sizes) or page limits may be rejected without further review.</p>
-        <p><b>Dual-submission policy</b>: We welcome ongoing and unpublished work. We also welcome papers that are under review at the time of submission, or that have been recently accepted.</p>
-        <p><b>Non-archival</b>: Workshop submissions and reviews will be private. The camera-ready version of accepted papers will be shared on the workshop webpage. However, the hosting is not an official proceeding, so the papers can be subsequently / concurrently submitted to other venues.</p>
-        <p><b>In person presentation</b>: Accepted papers are expected to be presented in person.</p>
-
-        <h2>Important Dates</h2>
-        <p>
-          </p><ul>
-            <li><b>Submission deadline</b>: TBD, 2024 AOE</li>
-            <li><b>Notification to authors</b>: TBD, 2024</li>
-            <li><b>Camera-ready deadline</b>: TBD, 2024 AOE</li>
+            <li><a class="nav-link scrollto" href="#schedule">Schedule</a></li>
+            <li><a class="nav-link scrollto" href="#org">Organization</a></li>
+            <!--            <li><a class="nav-link scrollto" href="#pc">Program Committee</a></li> -->
+            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
           </ul>
-        <p></p>
-
-        <h2>Schedule</h2>
-        <!-- <table class="table is-striped">
-          <thead>
-            <tr> <th>Time</th> <th>Event</th> <th>Speaker</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>8:45 am - 9:00 am</td><td>Opening Remarks</td><td>Workshop Organizers</td><td></td></tr>
-            <tr>
-              <td>9:00 am - 9:30 am</td>
-              <td>Invited Talk 1</td>
-              <td>Nils Reimers</td>
-            </tr>
-            <tr>
-              <td>9:30 am - 10:00 am</td>
-              <td>Invited Talk 2</td>
-              <td>Sebastian Riedel</td>
-            </tr>
-            <tr>
-              <td>10:00 am - 10:30 am</td>
-              <td>Break</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>10:30 am - 11:00 am</td>
-              <td>Invited Talk 3</td>
-              <td>John Schulman</td>
-            </tr>
-            <tr>
-              <td>11:00 am - 12:00 pm</td>
-              <td>Poster Session</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>12:00 pm - 1:30 pm</td>
-              <td>Lunch Break</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>1:30 pm - 2:00 pm</td>
-              <td>Invited Talk 4</td>
-              <td>Jimmy Lin</td>
-            </tr>
-            <tr>
-              <td>2:00 pm - 2:30 pm</td>
-              <td>Invited Talk 5</td>
-              <td>Ellie Pavlick</td>
-            </tr>
-            <tr>
-              <td>2:30 pm - 3:00 pm</td>
-              <td>Contributed Talks</td>
-              <td>
-                1. Dialog Inpainting: Turning Documents into Dialogs<br>
-                2. Huge Frozen Language Models as Readers for Open-Domain Question Answering<br>
-                3. LinkBERT: Pretraining Language Models with Document Links
-              </td>
-            </tr>
-            <tr>
-              <td>3:00 pm - 3:30 pm</td>
-              <td>Break</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>3:30 pm - 4:00 pm</td>
-              <td>Invited Talk 6</td>
-              <td>Danqi Chen</td>
-            </tr>
-            <tr>
-              <td>4:00 pm - 4:30 pm</td>
-              <td>Invited Talk 7</td>
-              <td>Quoc Le</td>
-            </tr>
-            <tr>
-              <td>4:30 pm - 5:30 pm</td>
-              <td>Panel Discussion</td>
-              <td>Panelists: Kenton Lee, Danqi Chen, Fernando Diaz, Stella Biderman<br>Moderator: Sasha Rush</td>
-            </tr>
-            <tr>
-              <td>5:30 pm - 5:40 pm</td>
-              <td>Closing Remarks</td>
-              <td>Workshop Organizers</td>
-            </tr>
-          </tbody>
-        </table> -->
-
-
-        <!-- <h2>Accepted Papers</h2>
-        <ul>
-          <li>
-            Michihiro Yasunaga, Jure Leskovec, Percy Liang.
-            <a href="https://openreview.net/forum?id=mAIHKEcg-sN">LinkBERT: Pretraining Language Models with Document Links</a>. 
-            <b>Contributed Talk</b>.
-          </li>
-          <li>
-            Takeshi Kojima, Shixiang Shane Gu, Machel Reid, Yutaka Matsuo, Yusuke Iwasawa.
-            <a href="https://openreview.net/forum?id=6p3AuaHAFiN">Large Language Models are Zero-Shot Reasoners</a>.
-          </li>
-          <li>
-            Zhuyun Dai, Arun Tejasvi Chaganty, Vincent Y Zhao, Aida Amini, Mike Green, Qazi Mamunur Rashid, Kelvin Guu.
-            <a href="https://openreview.net/forum?id=4Go-I0jf4a">Dialog Inpainting: Turning Documents into Dialogs</a>.
-            <b>Contributed Talk</b>.
-          </li>
-          <li>
-            Yoav Levine, Ori Ram, Daniel Jannai, Barak Lenz, Shai Shalev-Shwartz, Amnon Shashua, Kevin Leyton-Brown, Yoav Shoham.
-            <a href="https://openreview.net/forum?id=z3Bxu8xNJaF">Huge Frozen Language Models as Readers for Open-Domain Question Answering</a>.
-            <b>Contributed Talk</b>.
-          </li>
-          <li>
-            Jie Huang, Hanyin Shao, Kevin Chang.
-            <a href="https://openreview.net/forum?id=aimSsgpNSr">Are Large Pre-Trained Language Models Leaking Your Personal Information?</a>
-          </li>
-          <li>
-            Disha Shrivastava, Hugo Larochelle, Daniel Tarlow.
-            <a href="https://openreview.net/forum?id=bUDmRzeh3PT">Repository-Level Prompt Generation for Large Language Models of Code</a>.
-            <span class="icon"><i class="fa-solid fa-paperclip"></i></span>
-              <a href="https://knowledge-retrieval-workshop.github.io/assets/KLMN-2022-Workshop-Poster.pdf">Poster</a>
-          </li>
-          <li>
-            Man Luo, Mihir Parmar, Jayasurya Sevalur Mahendran, Sahit Jain, Samarth Rawal, Chitta Baral.
-            <a href="https://openreview.net/forum?id=grONYRLFkJ">SCONER: Scoring Negative Candidates Before Training Neural Re-Ranker For Question Answering</a>.
-            <span class="icon"><i class="fa-solid fa-paperclip"></i></span>
-              <a href="https://knowledge-retrieval-workshop.github.io/assets/SCONER_ICML_poster.pdf">Poster</a>
-            &nbsp;
-            <span class="icon"><i class="fa-solid fa-video"></i></span>
-              <a href="https://knowledge-retrieval-workshop.github.io/assets/SCONER_ICML_recording.mp4">Video</a>
-          </li>
-          <li>
-            Sebastian Hofstätter, Jiecao Chen, Karthik Raman, Hamed Zamani.
-            <a href="https://openreview.net/forum?id=ogMfFBkNsI6">Multi-Task Retrieval-Augmented Text Generation with Relevance Sampling</a>.
-          </li>
-          <li>
-            Gyuwan Kim, Jinhyuk Lee, Barlas Oguz, Wenhan Xiong, Yizhe Zhang, Yashar Mehdad, William Yang Wang.
-            <a href="https://openreview.net/forum?id=vtOrgYjli9R">Bridging the Training-Inference Gap for Dense Phrase Retrieval</a>.
-            <span class="icon"><i class="fa-solid fa-paperclip"></i></span>
-              <a href="https://knowledge-retrieval-workshop.github.io/assets/briding-gap-densephrases_poster_v3.pdf">Poster</a>
-          </li>
-          <li>
-            Minki Kang, Jin Myung Kwak, Jinheon Baek, Sung Ju Hwang.
-            <a href="https://openreview.net/forum?id=McHtKDi5h9">Knowledge-Consistent Dialogue Generation with Knowledge Graphs</a>.
-          </li>
-          <li>
-            Ahmad Pouramini.
-            <a href="https://openreview.net/forum?id=SfpsCVKeQ2N">Matching pre-training and Fine-tuning Methods for Knowledge Retrieval from pretrained Language Models</a>.
-          </li>
-          <li>
-            Uri Alon, Frank F. Xu, Junxian He, Sudipta Sengupta, Dan Roth, Graham Neubig.
-            <a href="https://openreview.net/forum?id=ZJZmKGM6UB">Neuro-Symbolic Language Modeling with Automaton-augmented Retrieval</a>.
-            <span class="icon"><i class="fa-solid fa-paperclip"></i></span>
-              <a href="https://knowledge-retrieval-workshop.github.io/assets/Retomaton_poster_workshop.pdf">Poster</a>
-            &nbsp;
-            <span class="icon"><i class="fa-solid fa-video"></i></span>
-              <a href="https://recorder-v3.slideslive.com/#/share?share=69099&amp;s=f862fc4f-577c-4a54-a820-1fbb4786afb9">Video</a>
-          </li>
-          <li>
-            Weijia Shi, Julian Michael, Suchin Gururangan, Luke Zettlemoyer.
-            <a href="https://knowledge-retrieval-workshop.github.io/assets/knnlm_workshop_paper.pdf">Nearest Neighbor Zero-Shot Inference</a>.
-          </li>
-        </ul> -->
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2 class="title">Workshop Organizers</h2>
-      <div class="tile is-ancestor">
-
-        <!-- Person Information -->
-        <div class="tile is-2 p-4">
-          <div class="tile is-child">
-            <figure class="image is-square block">
-              <img src="./assets/Ningyu-Zhang.jpg" alt="Ningyu Zhang" class="is-rounded">
-            </figure>
-            <p class="title is-5 has-text-centered">Ningyu Zhang</p>
-            <p class="subtitle is-6 has-text-centered">Zhejiang University</p>
-          </div>
-        </div>
-        <!-- End of Person Information -->
-
-        <!-- Person Information -->
-        <div class="tile is-2 p-4">
-          <div class="tile is-child">
-            <figure class="image is-square block">
-              <img src="./assets/Tianxing-Wu.png" alt="Tianxing Wu" class="is-rounded">
-            </figure>
-            <p class="title is-5 has-text-centered">Tianxing Wu</p>
-            <p class="subtitle is-6 has-text-centered">Southeast University</p>
-          </div>
-        </div>
-        <!-- End of Person Information -->
-
-        <!-- Person Information -->
-        <div class="tile is-2 p-4">
-          <div class="tile is-child">
-            <figure class="image is-square block">
-              <img src="./assets/Meng-Wang-1.jpg" alt="Meng Wang" class="is-rounded">
-            </figure>
-            <p class="title is-5 has-text-centered">Meng Wang</p>
-            <p class="subtitle is-6 has-text-centered">Tongji University</p>
-          </div>
-        </div>
-        <!-- End of Person Information -->
-
-        <!-- Person Information -->
-        <div class="tile is-2 p-4">
-          <div class="tile is-child">
-            <figure class="image is-square block">
-              <img src="./assets/Guilin-Qi.jpg" alt="Guilin Qi" class="is-rounded">
-            </figure>
-            <p class="title is-5 has-text-centered">Guilin Qi</p>
-            <p class="subtitle is-6 has-text-centered">Southeast University</p>
-          </div>
-        </div>
-        <!-- End of Person Information -->
-
-        <!-- Person Information -->
-        <div class="tile is-2 p-4">
-          <div class="tile is-child">
-            <figure class="image is-square block">
-              <img src="./assets/Haofen-Wang.jpg" alt="Haofen Wang" class="is-rounded">
-            </figure>
-            <p class="title is-5 has-text-centered">Haofen Wang</p>
-            <p class="subtitle is-6 has-text-centered">Tongji University</p>
-          </div>
-        </div>
-        <!-- End of Person Information -->
-
-        <!-- Person Information -->
-        <div class="tile is-2 p-4">
-          <div class="tile is-child">
-            <figure class="image is-square block">
-              <img src="./assets/Huajun-Chen.jpg" alt="Huajun Chen" class="is-rounded">
-            </figure>
-            <p class="title is-5 has-text-centered">Huajun Chen</p>
-            <p class="subtitle is-6 has-text-centered">Zhejiang University</p>
-          </div>
-        </div>
-        <!-- End of Person Information -->
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
 
       </div>
-      <div class="content">
-        <p>
-          For any questions, please contact us at <a href="">zhangningyu at zju dot edu dot cn</a>.
-        </p>
+    </header><!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+
+    <section id="hero"
+      class="d-flex flex-column justify-content-end align-items-center">
+      <div id="heroCarousel" data-bs-interval="5000"
+        class="container carousel carousel-fade" data-bs-ride="carousel">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="carousel-container">
+            <h2 class="animate__animated animate__fadeInDown"
+              style="font-size: 60px;"> ICLR 2024 Workshop on LLM Agents
+            </h2>
+
+            <h2 class="animate__animated animate__fadeInDown"
+              style="color: white;">May 11, 2024 in Vienna, Austria</h2>
+
+            <p class="animate__animated animate__fadeInDown">
+              Links:
+              <a
+                href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fctrlnlg.github.io%2F&ref_src=twsrc%5Etfw%7Ctwcamp%5Ebuttonembed%7Ctwterm%5Efollow%7Ctwgr%5Ectrl_nlg&region=follow_link&screen_name=LLMAgents"
+                target="_blank"
+                style="color: lightgrey;">Twitter</a> |
+              <a
+                href="https://openreview.net/group?id=ICLR.cc/2024/Workshop/LLMAgents"
+                target="_blank"
+                style="color: lightgrey;">OpenReview</a> |
+              <a href="https://iclr.cc/Conferences/2024/Dates" target="_blank"
+                style="color: lightgrey;">ICLR 2024</a>
+            </p>
+
+            <p class="animate__animated fanimate__adeInUp">
+
+            </p>
+          </div>
+        </div>
+
       </div>
-    </div>
-  </section>
-  
-<script src="chrome-extension://cdnlggbebabeoneeglhadpagegmflmbc/aiscripts/scriptBus.js"></script><span id="cnki_grabber" data-id="1699599045000" style="visibility: hidden;"></span><script></script></body></html>
+
+      <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28 " preserveAspectRatio="none">
+        <defs>
+          <path id="wave-path"
+            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+          </defs>
+          <g class="wave1">
+            <use xlink:href="#wave-path" x="50" y="3"
+              fill="rgba(255,255,255, .1)">
+            </g>
+            <g class="wave2">
+              <use xlink:href="#wave-path" x="50" y="0"
+                fill="rgba(255,255,255, .2)">
+              </g>
+              <g class="wave3">
+                <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+                </g>
+              </svg>
+
+            </section><!-- End Hero -->
+
+            <main id="main">
+
+              <section id="about" class="contact">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-6">
+
+                      <p style="font-size: 20px;">
+                        ICLR 2024 Workshop on LLM Agents delves into the
+                        significance of agents
+                        driven by large language models (LLMs), a topic that has
+                        recently sparked intense discussions. Building on the
+                        current huge progress on LLMs, we'll focus on autonomous
+                        agents that perform intricate tasks in both real and
+                        simulated environments guided by natural language
+                        instructions. What sets these agents apart is their
+                        sophisticated use of language prompts, not just as a
+                        means of communication but also as a medium for
+                        reasoning—a characteristic once thought unique to
+                        humans.
+                        <br>
+                        <br>
+                        Previous Workshop: <a
+                          href="https://ctrlnlg.github.io/"
+                          target="blank_">TamingLLM @ Sigdial & INLG 2023</a>
+                      </p>
+                    </div>
+                    <div class="col-3">
+                      <p> <img src="assets/img/taming3.jpg" class="img-fluid"
+                          alt> <a></a> </p>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                  </div>
+                </div>
+
+              </section><!-- End About Section -->
+
+              <!-- ======= Topics Section ======= -->
+              <section id="topics" class="team">
+                <div class="container">
+                  <div class="section-title" data-aos="zoom-out">
+                    <h2>Topics</h2>
+                  </div>
+                  <div class="container">
+                    <div class="row">
+                      <p>We will explore a range of topics in this workshop,
+                        including, but not limited to, the following areas:</p>
+                    </div>
+
+                    <!-- Panel for each topic -->
+                    <div class="row">
+                      <!-- Topic 1 -->
+                      <div class="col-md-4">
+                        <div class="topic-panel interactive-panel">
+                          <b>Memory Mechanisms and Linguistic Representation:</b>
+                          <p>This session will analyze the similarities between
+                            LLMs and human memory and will discuss the
+                            mechanisms
+                            of storage and formation of the linguistic
+                            representation in LLMs.</p>
+                        </div>
+                      </div>
+
+                      <!-- Topic 2 -->
+                      <div class="col-md-4">
+                        <div class="topic-panel interactive-panel">
+                          <b>Tool Augmentation and Grounding (interaction with
+                            environment):</b>
+                          <p>Addressing the enhancement of LLMs through tool
+                            augmentation, this session will also include a
+                            discourse on grounding – linking natural language
+                            concepts to particular contexts.</p>
+                        </div>
+                      </div>
+
+                      <!-- Topic 3 -->
+                      <div class="col-md-4">
+                        <div class="topic-panel interactive-panel">
+                          <b>Reasoning, Planning, and Risks:</b>
+                          <p>This session will discuss the intertwined processes
+                            of reasoning and planning in language agents and
+                            highlight the potential hazards associated with
+                            language agents' ability to autonomously operate in
+                            the real world.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <!-- Topic 4 -->
+                      <div class="col-md-6">
+                        <div class="topic-panel interactive-panel">
+                          <b>Multi-modality and Integration in Language Agents:</b>
+                          <p>This session will explore how language agents can
+                            integrate multiple modalities such as vision, sound,
+                            and touch to enhance their understanding and
+                            interaction with the environment.</p>
+                        </div>
+                      </div>
+
+                      <!-- Topic 5 -->
+                      <div class="col-md-6">
+                        <div class="topic-panel interactive-panel">
+                          <b>Conceptual Framework for Language Agents:</b>
+                          <p>This session will delve into a potential framework
+                            for language agents by drawing from both classic and
+                            contemporary AI research and related fields such as
+                            neuroscience, cognitive science, and linguistics.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section><!-- End Topics Section -->
+
+              <!-- ======= Speaker Section ======= -->
+              <section id="speaker" class="team">
+                <div class="container">
+                  <div class="section-title" data-aos="zoom-out">
+                    <h2>Speakers</h2>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
+                      <div class="member" data-aos="fade-up">
+                        <div class="member-img">
+                          <img src="assets/img/speaker/denny.jpeg"
+                            class="img-fluid" alt>
+                        </div>
+                        <div class="member-info">
+                          <h4><a href="https://dennyzhou.github.io/">Denny Zhou</a></h4>
+                          <strong>Principal Scientist/Research Director, Google
+                            DeepMind</strong>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
+                      <div class="member" data-aos="fade-up">
+                        <div class="member-img">
+                          <img src="assets/img/speaker/dilek.jpeg"
+                            class="img-fluid" alt>
+                        </div>
+                        <div class="member-info">
+                          <h4><a
+                              href="https://cs.illinois.edu/about/people/department-faculty/dilek">Dilek
+                              Hakkani-Tur</a></h4>
+                          <strong>Professor of Computer Science, University of
+                            Illinois Urbana-Champaign</strong>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
+                      <div class="member" data-aos="fade-up">
+                        <div class="member-img">
+                          <img
+                            src="https://cdn.snorkel.ai/wp-content/uploads/2022/04/Chelsea-Finn_thumb.png"
+                            class="img-fluid" alt>
+                        </div>
+                        <div class="member-info">
+                          <h4><a href="https://ai.stanford.edu/~cbfinn/">Chelsea
+                              Finn</a></h4>
+                          <strong>Assistant Professor, Stanford University</strong>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
+                      <div class="member" data-aos="fade-up">
+                        <div class="member-img">
+                          <img
+                            src="https://media.licdn.com/dms/image/C5103AQFTdhOlm8UynQ/profile-displayphoto-shrink_800_800/0/1516845291134?e=2147483647&v=beta&t=COHXwD0KW20To7Up-Zoc1_zwC6p-Z3mdecxz_-r5tyg"
+                            class="img-fluid" alt>
+                        </div>
+                        <div class="member-info">
+                          <h4><a href="https://www.cs.princeton.edu/~karthikn/">Karthik
+                              Narasimhan</a></h4>
+                          <strong>Assistant Professor, Computer Science,
+                            Princeton University</strong>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
+                      <div class="member" data-aos="fade-up">
+                        <div class="member-img">
+                          <img
+                            src="https://www.nextcanada.com/wp-content/uploads/2019/09/graham-neubig.jpg"
+                            class="img-fluid" alt>
+                        </div>
+                        <div class="member-info">
+                          <h4><a href="https://www.phontron.com/">Graham Neubig</a></h4>
+                          <strong>Associate Professor, CMU LTI</strong>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
+                      <div class="member" data-aos="fade-up">
+                        <div class="member-img">
+                          <img
+                            src="data:image/jpeg;base64,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"
+                            class="img-fluid" alt>
+                        </div>
+                        <div class="member-info">
+                          <h4><a href="https://web.eecs.umich.edu/~chaijy/">Joyce
+                              Y. Chai</a></h4>
+                          <strong>Professor, University of Michigan</strong>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </section>
+
+                <!-- ======= Schedule Section ======= -->
+                <!-- ======= Workshop Schedule Section ======= -->
+                <section id="schedule" class="schedule">
+                  <div class="container">
+                    <div class="section-title" data-aos="zoom-out">
+                      <h2>Workshop Schedule</h2>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="schedule-table">
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">Time</th>
+                                <th scope="col">Session</th>
+                                <th scope="col">Duration</th>
+                                <th scope="col">Details</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <!-- Opening Remarks -->
+                              <tr class="morning-session">
+                                <td>9:00 AM - 9:10 AM</td>
+                                <td>Opening Remarks</td>
+                                <td>10 min</td>
+                                <td>Welcome and Introduction to the Workshop</td>
+                              </tr>
+                              <!-- Invited Talk 1 -->
+                              <tr class="morning-session">
+                                <td>9:10 AM - 9:40 AM</td>
+                                <td>Invited Talk #1</td>
+                                <td>30 min</td>
+                                <td>First invited talk</td>
+                              </tr>
+                              <!-- Spotlight Presentation 1 -->
+                              <tr class="morning-session"> 
+                                <td>9:40 AM - 9:55 AM</td>
+                                <td>Spotlight Presentation #1</td>
+                                <td>15 mins</td>
+                                <td>First spotlight presentation</td>
+                              </tr>
+                              <!-- Invited Talk 2 -->
+                              <tr class="morning-session">
+                                <td>10:00 AM - 10:30 AM</td>
+                                <td>Invited Talk #2</td>
+                                <td>30 min</td>
+                                <td>Second invited talk</td>
+                              </tr>
+                              <!-- Coffee Break -->
+                              <tr>
+                                <td>10:30 AM - 10:45 AM</td>
+                                <td>Coffee Break</td>
+                                <td>15 min</td>
+                                <td>Networking and refreshments</td>
+                              </tr>
+                              <!-- Invited Talk 3 -->
+                              <tr class="afternoon-session">
+                                <td>10:45 AM - 11:15 AM</td>
+                                <td>Invited Talk #3</td>
+                                <td>30 min</td>
+                                <td>Third invited talk</td>
+                              </tr>
+                              <!-- Spotlight Presentation 2 -->
+                              <tr class="afternoon-session">
+                                <td>11:15 AM - 11:30 AM</td>
+                                <td>Spotlight Presentation #2</td>
+                                <td>15 mins</td>
+                                <td>Second spotlight presentation</td>
+                              </tr >
+                              <!-- Poster Session 1 -->
+                              <tr class="afternoon-session">
+                                <td>11:30 AM - 12:30 PM</td>
+                                <td>Poster Session I</td>
+                                <td>60 min</td>
+                                <td>First session for display and discussion of
+                                  all accepted submissions</td>
+                              </tr>
+                              <!-- Lunch Break -->
+                              <tr>
+                                <td>12:30 PM - 1:30 PM</td>
+                                <td>Lunch Break</td>
+                                <td>60 min</td>
+                                <td>Time for lunch and informal discussions</td>
+                              </tr>
+                              <!-- Invited Talk 4 -->
+                              <tr class="evening-session">
+                                <td>1:30 PM - 2:00 PM</td>
+                                <td>Invited Talk #4</td>
+                                <td>30 min</td>
+                                <td>Fourth invited talk</td>
+                              </tr>
+                              <!-- Spotlight Presentation 3 -->
+                              <tr class="evening-session">
+                                <td>2:00 PM - 2:15 PM</td>
+                                <td>Spotlight Presentation #3</td>
+                                <td>15 mins</td>
+                                <td>Third spotlight presentation</td>
+                              </tr>
+                              <!-- Invited Talk 5 -->
+                              <tr class="evening-session" >
+                                <td>2:15 PM - 2:45 PM</td>
+                                <td>Invited Talk #5</td>
+                                <td>30 min</td>
+                                <td>Fifth invited talk</td>
+                              </tr>
+                              <!-- Spotlight Presentation 3 -->
+                              <tr class="evening-session">
+                                <td>2:45 PM - 3:00 PM</td>
+                                <td>Spotlight Presentation #4</td>
+                                <td>15 mins</td>
+                                <td>Fourth spotlight presentation</td>
+                              </tr>
+                              <!-- Invited Talk 6 -->
+                              <tr class="evening-session" >
+                                <td>3:00 PM - 3:30 PM</td>
+                                <td>Invited Talk #6</td>
+                                <td>30 min</td>
+                                <td>Sixth invited talk</td>
+                              </tr>
+                              <!-- Coffee Break -->
+                              <tr>
+                                <td>3:30 PM - 3:45 PM</td>
+                                <td>Coffee Break</td>
+                                <td>15 min</td>
+                                <td>Networking and refreshments</td>
+                              </tr>
+                              <!-- Panel Discussion -->
+                              <tr class="night-session">
+                                <td>3:45 PM - 4:25 PM</td>
+                                <td>Panel Discussion</td>
+                                <td>40 min</td>
+                                <td>Interactive session with panelists</td>
+                              </tr>
+                              <!-- Closing Remarks -->
+                              <tr class="night-session">
+                                <td>4:25 PM - 4:30 PM</td>
+                                <td>Closing Remarks</td>
+                                <td>5 min</td>
+                                <td>Concluding the workshop</td>
+                              </tr>
+                              <!-- Poster Session 2 -->
+                              <tr class="night-session">
+                                <td>4:30 PM - 5:30 PM</td>
+                                <td>Poster Session II</td>
+                                <td>60 min</td>
+                                <td>Second session for display and discussion of
+                                  all accepted submissions</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </section>
+
+                <!-- End Workshop Schedule Section -->
+
+                <!-- ======= CFP Section ======= -->
+                <section id="cfp" class="cfp">
+                  <div class="container">
+
+                    <div class="section-title" data-aos="zoom-out">
+                      <h2>Call for Papers</h2>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="cfp-details">
+                          <h3>Important Dates:</h3>
+                          <ul>
+                            <li><strong>Submission Deadline:</strong> February
+                              11th, 2024 (11:59 pm AoE)
+                          </li>
+                          <li><strong>Acceptance Notification:</strong> <del>March 3rd, 2024</del> March 10th, 2024</li>
+
+                          <li><strong>Camera Ready Deadline:</strong> April
+                            20th, 2024</li>
+                            <li><strong>Paper Availability on Website:</strong> April
+                              27th, 2024</li> 
+                          <li><strong>Workshop Date:</strong> May 11th, 2024</li>
+                          <li><strong>Location:</strong> Vienna Exhibition &
+                            Congress Center</li>
+                        </ul>
+
+                        
+
+                        <!-- Submission Tracks -->
+                        <h3>Submission Tracks:</h3>
+
+                        <p>Consistent with the themes of the workshop, we invite
+                          contributions in the areas <a
+                            href="#topics">highlighted above</a>. However, we
+                          emphasize that the topics list is not exhaustive and
+                          welcome submissions in related areas. There is no need to specify your track on OpenReview. Our workshop will not accept work that has been previously published in other conferences on machine learning. Work that is presented at the main ICLR conference should not be submitted to us as well.
+                        
+                        </p>
+
+                        <ul>
+                          <li><strong>Research Paper Track:</strong> We welcome a
+                            variety of original research papers, including but not limited to those
+                            that propose new techniques, discussion-based papers,
+                            literature surveys, and position papers. Research
+                            papers can have a <strong>maximum</strong> length of up to 9
+                              pages of content, plus unlimited pages
+                            for references and appendix.</li>
+                          <li><strong>Demo Paper Track:</strong> We also welcome
+                            technical reports for the demo track, with a <strong>maximum</strong>
+                            of 9 pages (same as research papers). In addition to the
+                            paper, please provide a link to a video, website, or
+                            code
+                            repository showcasing your demo.</li>
+                        </ul>
+
+                        <!-- Guidelines Section -->
+                        <h3>Submission Guidelines:</h3>
+                        <ul>
+                          <li>🌐 Submission Platform:
+                            <ul>
+                              <li>Submit your papers here: <strong><a
+                                    href="https://openreview.net/group?id=ICLR.cc/2024/Workshop/LLMAgents">Openreview
+                                    Submission
+                                    Site</a></strong></li>
+                            </ul>
+                          </li>
+                          <li>📄 Paper Requirements:
+                            <ul>
+                              <li>Use the provided <a
+                                  href="https://github.com/ICLR/Master-Template/raw/master/iclr2024.zip">LaTeX
+                                  template</a> for your
+                                submission.</li>
+                              <li>Papers should be anonymized and uploaded as a
+                                single PDF.</li>
+                              <li>📚 References and Appendix: Reviewers are not
+                                obliged to read the appendix.</li>
+                            </ul>
+                          </li>
+                          <li>🔍 Non-Archival Policy:
+                            <ul>
+                              <li>Submissions will <strong>not be</strong>
+                                indexed or have archival proceedings. We welcome ICML 24 or ACL 24 submissions.</li>
+                              <li>Accepted papers will be displayed on the
+                                workshop website on <strong>27th April 2024</strong>. </li> 
+                            </ul>
+                          </li>
+                          <li>🔄 Dual Submission Policy:
+                            <ul>
+                              <li>Submissions under review at other venues will
+                                be accepted, provided they do not breach any
+                                dual-submission or anonymity policies of those
+                                venues.</li>
+                            </ul>
+                          </li>
+                          <li>👀 Review Process:
+                            <ul>
+                              <li>The review process is double-blind.</li>
+                            </ul>
+                          </li>
+                          <li>🏆 Best Paper and Demo Award:
+                            <ul>
+                              <li>The awards for best paper and demo will be
+                                announced at the
+                                workshop.</li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <!-- End Guidelines Section -->
+
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </section>
+              <!-- End CFP Section -->
+
+              <!-- ======= Organization Section ======= -->
+              <section id="org" class="team">
+                <div class="container">
+
+                  <div class="section-title" data-aos="zoom-out">
+                    <h2>Organization</h2>
+                    <p>Workshop Organizers</p>
+                  </div>
+
+                  <div class="section-title" data-aos="zoom-out">
+                    <h3>Organizing Commitee</h3>
+                  </div>
+
+                  <div class="row">
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
+                      <div class="member" data-aos="fade-up">
+                        <div class="member-img">
+                          <img src="assets/img/organizer/Xinyun.jpg"
+                            class="img-fluid" alt>
+                        </div>
+                        <div class="member-info">
+                          <h4><a href="https://jungyhuk.github.io/">Xinyun
+                              Chen</a></h4>
+                          <strong>Senior Research Scientist, Google DeepMind</strong>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
+                      <div class="member" data-aos="fade-up">
+                        <div class="member-img">
+                          <img src="assets/img/photo-xiangru.jpg"
+                            class="img-fluid" alt>
+                        </div>
+                        <div class="member-info">
+                          <h4><a href="https://xiangrutang.github.io/">Xiangru
+                              Robert Tang</a></h4>
+                          <strong>Ph.D. student @ Yale University</strong>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
+                      <div class="member" data-aos="fade-up">
+                        <div class="member-img">
+                          <img src="assets/img/di.jpg" class="img-fluid" alt>
+                        </div>
+                        <div class="member-info">
+                          <h4><a href="https://jind11.github.io/">Di Jin</a></h4>
+                          <strong>Senior Applied Scientist @ Amazon</strong>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
+                      <div class="member" data-aos="fade-up">
+                        <div class="member-img">
+                          <img src="assets/img/organizer/dev.jpg"
+                            class="img-fluid" alt>
+                        </div>
+                        <div class="member-info">
+                          <h4><a href="https://www.devamanyu.com/">Devamanyu
+                              Hazarika</a></h4>
+                          <strong>Applied Scientist @ Amazon</strong>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
+                      <div class="member" data-aos="fade-up">
+                        <div class="member-img">
+                          <img
+                            src="https://scsdean.cs.cmu.edu/new-faculty/resources/2022/daniel_fried.jpg"
+                            class="img-fluid" alt>
+                        </div>
+                        <div class="member-info">
+                          <h4><a href="https://dpfried.github.io/">Daniel
+                              Fried</a></h4>
+                          <strong>Assistant Professor, CMU LTI</strong>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
+                      <div class="member" data-aos="fade-up">
+                        <div class="member-img">
+                          <img src="assets/img/organizer/song.jpg"
+                            class="img-fluid" alt>
+                        </div>
+                        <div class="member-info">
+                          <h4><a
+                              href="https://www2.eecs.berkeley.edu/Faculty/Homepages/song.html">Dawn
+                              Song</a></h4>
+                          <strong>Professor, University of California,
+                            Berkeley </strong>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
+                      <div class="member" data-aos="fade-up">
+                        <div class="member-img">
+                          <img
+                            src="data:image/jpeg;base64,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"
+                            class="img-fluid" alt>
+                        </div>
+                        <div class="member-info">
+                          <h4><a href="https://raihanjoty.github.io/">Shafiq
+                              Joty</a></h4>
+                          <strong>Research Director, Salesforce Research</strong>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
+                      <div class="member" data-aos="fade-up">
+                        <div class="member-img">
+                          <img
+                            src="assets/img/organizer/merriemorris_square.jpg"
+                            class="img-fluid" alt>
+                        </div>
+                        <div class="member-info">
+                          <h4><a href="https://cs.stanford.edu/~merrie/">Meredith
+                              Ringel Morris </a></h4>
+                          <strong>Director for Human-AI Interaction Research,
+                            Google DeepMind</strong>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </section><!-- End Organization Section -->
+
+              <!-- ======= PC Member List Section ======= -->
+              <!-- <section id="pc-members" class="pc-members">
+                <div class="container">
+
+                  <div class="section-title" data-aos="zoom-out">
+                    <h2>Program Committee Members</h2>
+                  </div>
+
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Affiliation</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Zhiyang Xu</td>
+                        <td>PhD, Virginia Tech</td>
+                      </tr>
+                      <tr>
+                        <td>Kai Xiang</td>
+                        <td>Senior Applied Scientist, Amazon</td>
+                      </tr>
+                      <tr>
+                        <td>Shuyang Gao</td>
+                        <td>Machine Learning Engineer, Moveworks</td>
+                      </tr>
+                      <tr>
+                        <td>Shuyan Zhou</td>
+                        <td>PhD, CMU</td>
+                      </tr>
+                      <tr>
+                        <td>Frank Xu</td>
+                        <td>PhD, CMU</td>
+                      </tr>
+                      <tr>
+                        <td>Jing Yu Koh</td>
+                        <td>PhD, CMU</td>
+                      </tr>
+                      <tr>
+                        <td>Zhiruo Wang</td>
+                        <td>PhD, CMU</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+              </section>  -->
+              <!-- End PC Member List Section -->
+
+              <!-- ======= Contact Section ======= -->
+              <section id="contact" class="contact">
+                <div class="container">
+
+                  <div class="section-title" data-aos="zoom-out">
+                    <h2>Contact us</h2>
+                  </div>
+                  <div>
+                    <h5>Email us at <a href="mailto:llm.agents.ws@gmail.com">llm.agents.ws@gmail.com</a>
+                      | <a href="mailto:xiangru.tang@yale.edu">xiangru.tang@yale.edu</a></h5>
+
+                  </div>
+
+                </div>
+
+              </section><!-- End Contact Section -->
+
+              <!-- ======= Contact Section ======= -->
+              <!-- <section id="sponsors" class="sponsors">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>Sponsors</h2>
+        </div>
+
+        TBA
+
+      </div> -->
+
+            </main><!-- End #main -->
+
+            <!-- ======= Footer ======= -->
+            <footer id="footer">
+              <div class="container">
+                <div class="copyright">
+                  &copy; Copyright <strong><strong>Selecao</strong></strong>.
+                  All Rights Reserved
+                </div>
+                <div class="credits">
+                  <!-- All the links in the footer should remain intact. -->
+                  <!-- You can delete the links only if you purchased the pro version. -->
+                  <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                  <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/selecao-bootstrap-template/ -->
+                  Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                  and <a
+                    href="https://doc2dial.github.io/workshop2022/">DialDoc</a>
+                </div>
+              </div>
+            </footer><!-- End Footer -->
+
+            <a href="#"
+              class="back-to-top d-flex align-items-center justify-content-center"><i
+                class="bi bi-arrow-up-short"></i></a>
+
+            <!-- Vendor JS Files -->
+            <script src="assets/vendor/aos/aos.js"></script>
+            <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+            <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+            <script src="assets/vendor/php-email-form/validate.js"></script>
+            <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+            <!-- Template Main JS File -->
+            <script src="assets/js/main.js"></script>  
+               
+<!-- Default Statcounter code for llmagents.github.io
+https://llmagents.github.io/ -->
+<script type="text/javascript">
+var sc_project=12953394; 
+var sc_invisible=1; 
+var sc_security="86f01d45"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/12953394/0/86f01d45/1/"
+alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+    
+    
+          </body>
+
+        </html>
