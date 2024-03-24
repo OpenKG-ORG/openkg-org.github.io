@@ -1,2 +1,1 @@
-# LLMAgents Workshop
- 
+# OpenKG
