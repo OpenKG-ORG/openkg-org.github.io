@@ -1146,8 +1146,8 @@ section {
 .team .member .member-img {
   position: relative;
   overflow: hidden;
-  width: 190px;
-  height: 190px;
+  width: 200px;
+  height: 200px;
 }
 .team .member .social {
   position: absolute;
